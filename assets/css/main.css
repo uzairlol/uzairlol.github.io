@@ -3236,31 +3236,31 @@ input, select, textarea {
 			}
 
 		.wrapper.alt {
-			background-color: #261c3e;
+			background-color: #800000;
 		}
 
 		.wrapper.style1 {
-			background-color: #5e42a6;
+			background-color: #800000;
 		}
 
 		.wrapper.style1-alt {
-			background-color: #493382;
+			background-color: #800000;
 		}
 
 		.wrapper.style2 {
-			background-color: #5052b5;
+			background-color: #FFC107;
 		}
 
 		.wrapper.style2-alt {
-			background-color: #3e4094;
+			background-color: #FFC107;
 		}
 
 		.wrapper.style3 {
-			background-color: #b74e91;
+			background-color: #654321;
 		}
 
 		.wrapper.style3-alt {
-			background-color: #953d75;
+			background-color: #654321;
 		}
 
 		.wrapper.fullscreen {

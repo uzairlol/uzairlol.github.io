@@ -3256,11 +3256,11 @@ input, select, textarea {
 		}
 
 		.wrapper.style3 {
-			background-color: #3B3B2B;
+			background-color: #013220;
 		}
 
 		.wrapper.style3-alt {
-			background-color: #3B3B2B;
+			background-color: #013220;
 		}
 
 		.wrapper.fullscreen {
@@ -3524,7 +3524,7 @@ input, select, textarea {
 
 	#sidebar {
 		padding: 2.5em 2.5em 0.5em 2.5em ;
-		background: #353535;
+		background: #2E0F0F;
 		cursor: default;
 		height: 100vh;
 		left: 0;

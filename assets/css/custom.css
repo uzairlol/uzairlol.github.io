@@ -124,3 +124,142 @@
         padding: 1.3rem 1.4rem !important;
     }
 }
+
+/* =========================================================
+   CONTACT BUTTONS
+   Three large clickable cards for Email, LinkedIn, GitHub.
+   Fully selector-driven — layout and colour are CSS-only.
+   ========================================================= */
+
+.contact-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+    margin-top: 1.8rem;
+}
+
+/* Base card */
+.contact-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem;
+    flex: 1 1 180px;
+    min-width: 160px;
+    padding: 1.6rem 1.4rem;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-decoration: none !important;
+    border-bottom: none !important;         /* kill theme's dotted underline */
+    color: inherit;
+    transition: transform 0.2s ease,
+                box-shadow 0.2s ease,
+                background 0.2s ease;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.contact-btn:hover {
+    transform: translateY(-4px);
+    background: rgba(255, 255, 255, 0.09);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    color: #fff;
+}
+
+/* Icon circle */
+.contact-btn-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.6rem;
+    height: 2.6rem;
+    border-radius: 50%;
+    font-size: 1.1rem;
+    font-weight: bold;
+    font-style: normal;
+    line-height: 1;
+    margin-bottom: 0.1rem;
+    transition: transform 0.2s ease;
+}
+
+.contact-btn:hover .contact-btn-icon {
+    transform: scale(1.12);
+}
+
+/* Per-button accent colours */
+#btn-email .contact-btn-icon {
+    background: rgba(234, 88, 12, 0.18);
+    color: #f97316;
+    border: 1px solid rgba(249, 115, 22, 0.35);
+}
+#btn-email:hover {
+    border-color: rgba(249, 115, 22, 0.4);
+    box-shadow: 0 10px 30px rgba(249, 115, 22, 0.15);
+}
+
+#btn-linkedin .contact-btn-icon {
+    background: rgba(10, 102, 194, 0.2);
+    color: #60a5fa;
+    border: 1px solid rgba(96, 165, 250, 0.35);
+}
+#btn-linkedin:hover {
+    border-color: rgba(96, 165, 250, 0.4);
+    box-shadow: 0 10px 30px rgba(96, 165, 250, 0.15);
+}
+
+#btn-github .contact-btn-icon {
+    background: rgba(180, 130, 255, 0.15);
+    color: #c084fc;
+    border: 1px solid rgba(192, 132, 252, 0.35);
+}
+#btn-github:hover {
+    border-color: rgba(192, 132, 252, 0.4);
+    box-shadow: 0 10px 30px rgba(192, 132, 252, 0.15);
+}
+
+/* Label */
+.contact-btn-label {
+    font-size: 0.95em;
+    font-weight: bold;
+    color: #fff;
+    letter-spacing: 0.02em;
+}
+
+/* Sub-label (the actual address) */
+.contact-btn-sub {
+    font-size: 0.68em;
+    color: rgba(255, 255, 255, 0.45);
+    letter-spacing: 0.01em;
+    word-break: break-all;
+    text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+    .contact-buttons {
+        flex-direction: column;
+    }
+    .contact-btn {
+        flex: 1 1 auto;
+    }
+}
+
+/* =========================================================
+   FOOTER — dark theme, no white bar
+   ========================================================= */
+#footer {
+    text-align: center;
+    padding: 2.5em 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    /* inherits body background (#400000-ish dark) */
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 0.8em;
+    letter-spacing: 0.04em;
+}
+
+#footer p {
+    margin: 0;
+}
+

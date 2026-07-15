@@ -80,6 +80,22 @@
 					<h2>Featured Projects</h2>
 					<div class="features">
 						<section>
+							<h3>ELICIT — Emergent LLM Institutions for Climate Treaties</h3>
+							<p><small><strong>Tags:</strong> Multi-Agent Systems, LLM, Game Theory, Climate Risk, Governance, Ollama</small></p>
+							<p>Final-year research project: a multi-agent simulation framework where LLM-driven agents must negotiate cooperation, impose sanctions, share climate risk, and vote to rewrite their own governing rules — modelled on real UN treaty dynamics. Agents choose institutions, contribute to public goods pools, apply punishments/rewards, and participate in constitutional democracy sessions each round. The framework layers in climate shocks, a Loss &amp; Damage Fund, Theory of Mind reasoning, and reputation-driven gossip to study emergent governance under uncertainty.</p>
+							<ul class="actions">
+								<li><a href="https://github.com/uzairlol/ELICIT-fyp" class="button">View on GitHub</a></li>
+							</ul>
+						</section>
+						<section>
+							<h3>ECG5000 Anomaly Detection with TCN</h3>
+							<p><small><strong>Tags:</strong> Deep Learning, TCN, PyTorch, Self-Supervised Learning, SimCLR, Anomaly Detection, Time Series</small></p>
+							<p>Production-grade PyTorch pipeline for ECG heartbeat anomaly detection and classification on the ECG5000 dataset. Implements Temporal Convolutional Networks (TCN) across three paradigms: supervised binary classification, self-supervised reconstruction-based anomaly detection (trained on normal ECGs only with calibrated thresholding), and contrastive learning via SimCLR. Features dilated causal convolutions, RobustScaler preprocessing, automatic threshold calibration, and full visualization of confusion matrices and reconstruction quality.</p>
+							<ul class="actions">
+								<li><a href="https://github.com/uzairlol/ECG5000-TCN-Classification" class="button">View on GitHub</a></li>
+							</ul>
+						</section>
+						<section>
 							<h3>Taxi Demand MLOps Pipeline</h3>
 							<p><small style="color: #666;"><strong>Tags:</strong> MLOps, XGBoost, Optuna, MLflow, FastAPI, SQLite, Docker, Drift Monitoring</small></p>
 							<p>Production-grade MLOps system for real-time NYC taxi demand forecasting. Ingests raw parquet data, engineers lag/rolling features, and trains an Optuna-tuned XGBoost model with full MLflow experiment tracking and Model Registry. Serves predictions via a stateful FastAPI app backed by a persistent SQLite feature store, with KS-test drift monitoring and 36 unit/integration tests.</p>
@@ -143,29 +159,34 @@
 			<section id="contact" class="wrapper style1 fade-up">
 				<div class="inner">
 					<h2>Get In Touch</h2>
-					<p>I'm always interested in discussing data science, machine learning opportunities, and collaborative projects.</p>
-					<ul class="contact">
-						<li>
-							<h3>Email</h3>
-							<a href="mailto:uarif2093@gmail.com">uarif2093@gmail.com</a>
-						</li>
-						<li>
-							<h3>LinkedIn</h3>
-							<a href="https://www.linkedin.com/in/uzairarif/">linkedin.com/in/uzairarif</a>
-						</li>
-						<li>
-							<h3>GitHub</h3>
-							<a href="https://github.com/uzairlol">github.com/uzairlol</a>
-						</li>
-					</ul>
+					<p>I'm always open to discussing research, ML opportunities, and collaborative projects.</p>
+					<div class="contact-buttons">
+						<a href="mailto:uarif2093@gmail.com" class="contact-btn" id="btn-email">
+							<span class="contact-btn-icon">✉</span>
+							<span class="contact-btn-label">Email Me</span>
+							<span class="contact-btn-sub">uarif2093@gmail.com</span>
+						</a>
+						<a href="https://www.linkedin.com/in/uzairarif/" target="_blank" class="contact-btn" id="btn-linkedin">
+							<span class="contact-btn-icon">in</span>
+							<span class="contact-btn-label">LinkedIn</span>
+							<span class="contact-btn-sub">linkedin.com/in/uzairarif</span>
+						</a>
+						<a href="https://github.com/uzairlol" target="_blank" class="contact-btn" id="btn-github">
+					<span class="contact-btn-icon">
+						<svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="display:block;">
+							<path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+						</svg>
+					</span>
+					<span class="contact-btn-label">GitHub</span>
+					<span class="contact-btn-sub">github.com/uzairlol</span>
+				</a>
+					</div>
 				</div>
 			</section>
 			
 			<!-- Footer -->
-			<footer id="footer" class="wrapper style1 fade-up" style="text-align: center; padding: 3em 0; border-top: 1px solid #e0e0e0; background: #f9f9f9; margin-top: 3em;">
-				<div class="inner" style="color: #666; font-size: 0.9em;">
-					<p>&copy; 2026 Uzair Arif. All rights reserved.</p>
-				</div>
+			<footer id="footer">
+				<p>&copy; 2026 Uzair Arif. All rights reserved.</p>
 			</footer>
 
 		</div>

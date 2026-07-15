@@ -50,13 +50,7 @@
     overflow: hidden;
 }
 
-/* Override the theme's nth-child border hacks */
-#projects .features > section:nth-child(-n + 2) {
-    border-top: none !important;
-}
-#projects .features > section:nth-child(2n) {
-    border-left: 3px solid rgba(180, 130, 255, 0.6) !important;
-}
+/* Ambient glow effect is handled by hover below */
 
 /* Decorative ambient glow top-left — no extra markup */
 #projects .features > section::before {

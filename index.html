@@ -76,56 +76,56 @@
 					<div class="features">
 						<section>
 							<h3>Taxi Demand MLOps Pipeline</h3>
-							<p><small style="color: #666;"><strong>Tags:</strong> MLOps, MLflow, FastAPI, Docker, ZeroMQ, Streaming</small></p>
-							<p>End-to-end MLOps pipeline for real-time NYC taxi demand forecasting. Features a streaming data simulator (ZeroMQ), an XGBoost model tracked with MLflow, a FastAPI inference service, and Docker Compose orchestration — all production-ready.</p>
+							<p><small style="color: #666;"><strong>Tags:</strong> MLOps, XGBoost, Optuna, MLflow, FastAPI, SQLite, Docker, Drift Monitoring</small></p>
+							<p>Production-grade MLOps system for real-time NYC taxi demand forecasting. Ingests raw parquet data, engineers lag/rolling features, and trains an Optuna-tuned XGBoost model with full MLflow experiment tracking and Model Registry. Serves predictions via a stateful FastAPI app backed by a persistent SQLite feature store, with KS-test drift monitoring and 36 unit/integration tests.</p>
 							<ul class="actions">
 								<li><a href="https://github.com/uzairlol/taxi-mlops" class="button">View on GitHub</a></li>
 							</ul>
 						</section>
 						<section>
 							<h3>IBA RAG Chatbot</h3>
-							<p><small style="color: #666;"><strong>Tags:</strong> NLP, RAG, Semantic Search, Python</small></p>
-							<p>Built a hybrid retrieval-augmented chatbot for university information using FAISS semantic search and BM25 keyword search across PDF and web content.</p>
+							<p><small style="color: #666;"><strong>Tags:</strong> NLP, RAG, Hybrid Search, FAISS, BM25, LangChain, Groq, Streamlit</small></p>
+							<p>Hybrid Retrieval-Augmented Generation chatbot for IBA university data. Combines FAISS semantic search with BM25 keyword search using Reciprocal Rank Fusion across both PDF documents and HTML web pages. Features smart recursive chunking that respects paragraph boundaries, source attribution on every answer, and a Streamlit web interface. Powered by LangChain and Groq's Llama 3.</p>
 							<ul class="actions">
 								<li><a href="https://github.com/uzairlol/IBA-RAG-chatbot" class="button">View on GitHub</a></li>
 							</ul>
 						</section>
 						<section>
 							<h3>Prophet Daily Revenue Forecasting</h3>
-							<p><small style="color: #666;"><strong>Tags:</strong> Time Series, Forecasting, Prophet, Optuna</small></p>
-							<p>Time-series forecasting pipeline using Prophet with Pakistan holiday effects, Optuna-driven hyperparameter tuning, and reporting outputs for business tracking.</p>
+							<p><small style="color: #666;"><strong>Tags:</strong> Time Series, Prophet, Optuna, Lunar Calendar, Revenue Forecasting</small></p>
+							<p>Daily revenue forecasting pipeline using Facebook Prophet with full Pakistan public and Islamic lunar holiday integration. Hyperparameters are tuned end-to-end with Optuna, and results are exported to Excel with trend visualizations — designed for confidential business data with reproducible forecasting workflows.</p>
 							<ul class="actions">
 								<li><a href="https://github.com/uzairlol/Prophet-Daily-Revenue-Forecasting" class="button">View on GitHub</a></li>
 							</ul>
 						</section>
 						<section>
 							<h3>Impostor Hunt: Detecting Hallucinated LLM Outputs</h3>
-							<p><small style="color: #666;"><strong>Tags:</strong> AI Security, NLP, CatBoost, ESA</small></p>
-							<p>ESA competition (Secure Your AI series) to detect data-poisoned and hallucinated LLM outputs from faithful ones. Achieved a public score of 0.90663 using CatBoost with SciBERT embeddings, GPT-2 perplexity, and similarity features — trained on only 95 samples against 1,068 test pairs.</p>
+							<p><small style="color: #666;"><strong>Tags:</strong> AI Security, NLP, CatBoost, SciBERT, GPT-2 Perplexity, Kaggle, Optuna</small></p>
+							<p>ESA "Secure Your AI" competition entry to distinguish hallucinated and data-poisoned LLM outputs from faithful ones. Achieved a public score of 0.90663 using a CatBoost classifier on SciBERT sentence embeddings, GPT-2 perplexity, bigram Jaccard similarity, KL divergence, and burstiness features — trained on just 95 samples and evaluated against 1,068 test pairs. Tuned via Optuna with 5-fold CV.</p>
 							<ul class="actions">
 								<li><a href="https://github.com/uzairlol/Real-vs-Fake-Text" class="button">View on GitHub</a></li>
 							</ul>
 						</section>
 						<section>
 							<h3>Inflation Forecast ML</h3>
-							<p><small style="color: #666;"><strong>Tags:</strong> Forecasting, Ensemble ML, Random Forest, XGBoost</small></p>
-							<p>Machine learning forecasting project using Random Forest, XGBoost, and ensemble modeling with recursive forecasting for inflation trend prediction.</p>
+							<p><small style="color: #666;"><strong>Tags:</strong> Forecasting, Ensemble ML, Random Forest, XGBoost, Recursive Forecasting</small></p>
+							<p>Competition project for IBA's Economic Growth &amp; Forecasting (EGF) Lab predicting Pakistan inflation trends for 2024. Combines Random Forest (RMSE: 0.99) and XGBoost (RMSE: 1.12) via a weighted ensemble, with recursive multi-step forecasting, exhaustive feature engineering, and hyperparameter tuning — achieving top-tier accuracy with publicly available macroeconomic data.</p>
 							<ul class="actions">
 								<li><a href="https://github.com/uzairlol/InflationForecastML" class="button">View on GitHub</a></li>
 							</ul>
 						</section>
 						<section>
 							<h3>LSTM AAPL Stock Prediction</h3>
-							<p><small style="color: #666;"><strong>Tags:</strong> Deep Learning, Time Series, LSTM, TensorFlow</small></p>
-							<p>LSTM-based deep learning model to forecast AAPL stock prices with preprocessing, sequence modeling, and trend visualization.</p>
+							<p><small style="color: #666;"><strong>Tags:</strong> Deep Learning, LSTM, Time Series, yfinance, Keras</small></p>
+							<p>LSTM neural network predicting Apple (AAPL) stock prices from iPhone launch to present using Yahoo Finance data. Preprocesses with MinMaxScaler and LSTM-compatible sequence generation, trains with Adam optimizer over 100 epochs on an 80/20 split, and evaluates with MAE, MSE, RMSE, and R² — with full visualization of predicted vs. actual price trends.</p>
 							<ul class="actions">
 								<li><a href="https://github.com/uzairlol/LSTM_AAPL_Stock_Prediction" class="button">View on GitHub</a></li>
 							</ul>
 						</section>
 						<section>
 							<h3>Bitcoin Sentiment Prediction</h3>
-							<p><small style="color: #666;"><strong>Tags:</strong> Forecasting, Sentiment Analysis, Ensemble ML</small></p>
-							<p>Predictive modeling project estimating next-day Bitcoin movement from historical market behavior and sentiment-enriched features.</p>
+							<p><small style="color: #666;"><strong>Tags:</strong> Sentiment Analysis, XGBoost, Random Forest, Wikipedia, yfinance, Cryptocurrency</small></p>
+							<p>Predicts Bitcoin's next-day price movement by fusing historical OHLCV data (yfinance) with real-time sentiment signals derived from Wikipedia edit activity. XGBoost and Random Forest classifiers are trained on the combined dataset with hyperparameter tuning, targeting whether BTC price rises or falls — addressing the challenge of sentiment-driven volatility in crypto markets.</p>
 							<ul class="actions">
 								<li><a href="https://github.com/uzairlol/Bitcoin-Sentiment-Prediction" class="button">View on GitHub</a></li>
 							</ul>

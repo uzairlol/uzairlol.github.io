@@ -4,6 +4,32 @@
  */
 
 /* =========================================================
+   DARKER SHADE COLOR OVERRIDES
+   ========================================================= */
+
+/* Darken the base body and wrapper layouts */
+body, 
+.wrapper.style1, 
+.wrapper.style1-alt,
+.wrapper.alt {
+    background-color: #0b0202 !important; /* Darker near-black red instead of #3C1414 / #400000 */
+}
+
+.wrapper.style2,
+.wrapper.style2-alt {
+    background-color: #0d0d0d !important; /* Darker neutral gray instead of #1C1C1C */
+}
+
+.wrapper.style3,
+.wrapper.style3-alt {
+    background-color: #090e18 !important; /* Darker dark slate/navy instead of #152238 */
+}
+
+#sidebar {
+    background: #050505 !important; /* Darker sidebar instead of #0A0A0A */
+}
+
+/* =========================================================
    PROJECT CARDS
    Target: #projects .features > section
    Each <section> inside .features becomes a standalone card.

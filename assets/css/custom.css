@@ -132,17 +132,17 @@
     margin-top: 1.8rem;
 }
 
-/* Base card */
+/* Base card - updated for horizontal, clean alignment */
 .contact-btn {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 0.35rem;
-    flex: 1 1 180px;
-    min-width: 160px;
-    padding: 1.6rem 1.4rem;
-    border-radius: 14px;
+    gap: 0.8rem;
+    flex: 1 1 150px;
+    min-width: 140px;
+    padding: 1rem 1.4rem;
+    border-radius: 10px;
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
     text-decoration: none !important;
@@ -157,30 +157,29 @@
 }
 
 .contact-btn:hover {
-    transform: translateY(-4px);
+    transform: translateY(-2px);
     background: rgba(255, 255, 255, 0.09);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
     color: #fff;
 }
 
-/* Icon circle */
+/* Icon container inside button */
 .contact-btn-icon {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 2.6rem;
-    height: 2.6rem;
+    width: 2.2rem;
+    height: 2.2rem;
     border-radius: 50%;
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: bold;
     font-style: normal;
     line-height: 1;
-    margin-bottom: 0.1rem;
     transition: transform 0.2s ease;
 }
 
 .contact-btn:hover .contact-btn-icon {
-    transform: scale(1.12);
+    transform: scale(1.08);
 }
 
 /* Per-button accent colours */
@@ -191,7 +190,7 @@
 }
 #btn-email:hover {
     border-color: rgba(249, 115, 22, 0.4);
-    box-shadow: 0 10px 30px rgba(249, 115, 22, 0.15);
+    box-shadow: 0 6px 20px rgba(249, 115, 22, 0.15);
 }
 
 #btn-linkedin .contact-btn-icon {
@@ -201,7 +200,7 @@
 }
 #btn-linkedin:hover {
     border-color: rgba(96, 165, 250, 0.4);
-    box-shadow: 0 10px 30px rgba(96, 165, 250, 0.15);
+    box-shadow: 0 6px 20px rgba(96, 165, 250, 0.15);
 }
 
 #btn-github .contact-btn-icon {
@@ -211,24 +210,15 @@
 }
 #btn-github:hover {
     border-color: rgba(192, 132, 252, 0.4);
-    box-shadow: 0 10px 30px rgba(192, 132, 252, 0.15);
+    box-shadow: 0 6px 20px rgba(192, 132, 252, 0.15);
 }
 
 /* Label */
 .contact-btn-label {
-    font-size: 0.95em;
+    font-size: 0.9em;
     font-weight: bold;
     color: #fff;
     letter-spacing: 0.02em;
-}
-
-/* Sub-label (the actual address) */
-.contact-btn-sub {
-    font-size: 0.68em;
-    color: rgba(255, 255, 255, 0.45);
-    letter-spacing: 0.01em;
-    word-break: break-all;
-    text-align: center;
 }
 
 @media screen and (max-width: 600px) {

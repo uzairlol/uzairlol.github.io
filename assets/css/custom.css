@@ -39,7 +39,26 @@ body,
 .wrapper.style3,
 .wrapper.style3-alt {
     background-color: #0b0202 !important;
+}
+
+.wrapper.style1:not(#intro), 
+.wrapper.style1-alt,
+.wrapper.alt,
+.wrapper.style2,
+.wrapper.style2-alt,
+.wrapper.style3,
+.wrapper.style3-alt {
     background-image: none !important;
+}
+
+/* Restore the intro background with skewed lines on the home section */
+#intro {
+    background-color: #0b0202 !important;
+    background-attachment: fixed !important;
+    background-image: url("images/intro.svg") !important;
+    background-position: top right !important;
+    background-repeat: no-repeat !important;
+    background-size: 100% 100% !important;
 }
 
 #sidebar {

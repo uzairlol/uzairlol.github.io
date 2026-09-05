@@ -316,11 +316,32 @@ h1.major:after {
     color: #ff4d4d !important;
 }
 
+.contact-btn-content {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+}
+
 .contact-btn-label {
     font-size: 0.95em !important;
-    font-weight: 600 !important;
+    font-weight: 700 !important;
     letter-spacing: 0.04em !important;
     color: #ffffff !important;
+    line-height: 1.2 !important;
+}
+
+.contact-btn-sub {
+    font-size: 0.76em !important;
+    font-weight: 500 !important;
+    color: rgba(255, 255, 255, 0.55) !important;
+    letter-spacing: 0.02em !important;
+    margin-top: 0.15rem !important;
+    font-family: inherit !important;
+}
+
+.contact-btn:hover .contact-btn-sub {
+    color: rgba(255, 255, 255, 0.85) !important;
 }
 
 @media screen and (max-width: 600px) {

@@ -14,18 +14,18 @@
 	<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
 	<link rel="canonical" href="https://uzairlol.github.io/" />
 
-	<!-- GEO Metadata (Local & Geographic Discovery) -->
-	<meta name="geo.region" content="PK-SD" />
-	<meta name="geo.placename" content="Karachi, Sindh, Pakistan" />
-	<meta name="geo.position" content="24.8607;67.0011" />
-	<meta name="ICBM" content="24.8607, 67.0011" />
+	<!-- GEO Metadata (Local & Geographic Discovery - Islamabad, Pakistan) -->
+	<meta name="geo.region" content="PK-IS" />
+	<meta name="geo.placename" content="Islamabad, Islamabad Capital Territory, Pakistan" />
+	<meta name="geo.position" content="33.6844;73.0479" />
+	<meta name="ICBM" content="33.6844, 73.0479" />
 
 	<!-- Open Graph / Facebook / LinkedIn -->
 	<meta property="og:site_name" content="Uzair Arif Portfolio" />
 	<meta property="og:type" content="profile" />
 	<meta property="og:url" content="https://uzairlol.github.io/" />
 	<meta property="og:title" content="Uzair Arif | AI Researcher & Machine Learning Engineer" />
-	<meta property="og:description" content="AI Researcher and Machine Learning Engineer advancing multi-agent LLM institutions, agentic memory, and production ML pipelines." />
+	<meta property="og:description" content="AI Researcher and Machine Learning Engineer in Islamabad, Pakistan advancing multi-agent LLM systems, agentic memory architectures (ELICIT, SEAM), and production MLOps." />
 	<meta property="og:image" content="https://uzairlol.github.io/images/logo.png" />
 	<meta property="og:image:width" content="512" />
 	<meta property="og:image:height" content="512" />
@@ -37,52 +37,85 @@
 	<meta name="twitter:card" content="summary" />
 	<meta name="twitter:url" content="https://uzairlol.github.io/" />
 	<meta name="twitter:title" content="Uzair Arif | AI Researcher & Machine Learning Engineer" />
-	<meta name="twitter:description" content="AI Researcher advancing multi-agent LLM systems, agentic memory, and production ML pipelines." />
+	<meta name="twitter:description" content="AI Researcher in Islamabad advancing multi-agent LLM systems, agentic memory, and production ML pipelines." />
 	<meta name="twitter:image" content="https://uzairlol.github.io/images/logo.png" />
 
 	<!-- AEO & AI Overview: Schema.org Structured Data (JSON-LD) -->
 	<script type="application/ld+json">
 	{
 		"@context": "https://schema.org",
-		"@type": "Person",
-		"name": "Uzair Arif",
-		"alternateName": "uzairlol",
-		"url": "https://uzairlol.github.io/",
-		"image": "https://uzairlol.github.io/images/logo.png",
-		"jobTitle": "Machine Learning Engineer & AI Researcher",
-		"alumniOf": {
-			"@type": "CollegeOrUniversity",
-			"name": "Institute of Business Administration (IBA) Karachi"
-		},
-		"nationality": "Pakistani",
-		"address": {
-			"@type": "PostalAddress",
-			"addressLocality": "Karachi",
-			"addressRegion": "Sindh",
-			"addressCountry": "Pakistan"
-		},
-		"sameAs": [
-			"https://github.com/uzairlol",
-			"https://www.linkedin.com/in/uzairarif/"
-		],
-		"knowsAbout": [
-			"Multi-Agent Systems",
-			"Large Language Models",
-			"Agentic Memory Systems",
-			"Game Theory & Mechanism Design",
-			"Deep Learning",
-			"PyTorch",
-			"MLOps",
-			"Time Series Forecasting",
-			"Natural Language Processing",
-			"FastAPI",
-			"Docker"
-		],
-		"hasOccupation": {
-			"@type": "Occupation",
-			"name": "AI Researcher and Machine Learning Engineer",
-			"skills": "Multi-Agent Simulation, LLM Agent Alignment, Deep Learning, MLOps, Time Series Analysis"
-		}
+		"@graph": [
+			{
+				"@type": "Person",
+				"@id": "https://uzairlol.github.io/#person",
+				"name": "Uzair Arif",
+				"alternateName": "uzairlol",
+				"url": "https://uzairlol.github.io/",
+				"image": "https://uzairlol.github.io/images/logo.png",
+				"email": "mailto:uarif2093@gmail.com",
+				"jobTitle": "Machine Learning Engineer & AI Researcher",
+				"description": "AI Researcher and Machine Learning Engineer in Islamabad specializing in multi-agent LLM systems, emergent governance, agentic memory architectures (ELICIT, SEAM), and production MLOps.",
+				"alumniOf": {
+					"@type": "CollegeOrUniversity",
+					"name": "Institute of Business Administration (IBA) Karachi"
+				},
+				"nationality": "Pakistani",
+				"homeLocation": {
+					"@type": "Place",
+					"name": "Islamabad, Pakistan"
+				},
+				"address": {
+					"@type": "PostalAddress",
+					"addressLocality": "Islamabad",
+					"addressRegion": "Islamabad Capital Territory",
+					"addressCountry": "Pakistan"
+				},
+				"sameAs": [
+					"https://github.com/uzairlol",
+					"https://www.linkedin.com/in/uzairarif/",
+					"mailto:uarif2093@gmail.com"
+				],
+				"contactPoint": [
+					{
+						"@type": "ContactPoint",
+						"contactType": "Professional Inquiries & Research",
+						"email": "uarif2093@gmail.com",
+						"url": "https://www.linkedin.com/in/uzairarif/"
+					}
+				],
+				"knowsAbout": [
+					"Multi-Agent Systems",
+					"Large Language Models",
+					"Agentic Memory Systems",
+					"Game Theory & Mechanism Design",
+					"Deep Learning",
+					"PyTorch",
+					"MLOps",
+					"Time Series Forecasting",
+					"Natural Language Processing",
+					"FastAPI",
+					"Docker",
+					"Vector Retrieval (FAISS, BM25)",
+					"Reinforcement Learning"
+				],
+				"hasOccupation": {
+					"@type": "Occupation",
+					"name": "AI Researcher and Machine Learning Engineer",
+					"skills": "Multi-Agent Simulation, LLM Agent Alignment, Deep Learning, MLOps, Time Series Analysis",
+					"occupationalCategory": "15-1252.00"
+				}
+			},
+			{
+				"@type": "WebSite",
+				"@id": "https://uzairlol.github.io/#website",
+				"url": "https://uzairlol.github.io/",
+				"name": "Uzair Arif Portfolio",
+				"description": "Portfolio of Uzair Arif - AI Researcher & Machine Learning Engineer in Islamabad, Pakistan",
+				"publisher": {
+					"@id": "https://uzairlol.github.io/#person"
+				}
+			}
+		]
 	}
 	</script>
 
@@ -93,7 +126,7 @@
 
 	<!-- Stylesheets -->
 	<link rel="stylesheet" href="assets/css/main.css" />
-	<link rel="stylesheet" href="assets/css/custom.css?v=8" />
+	<link rel="stylesheet" href="assets/css/custom.css?v=9" />
 	<noscript>
 		<link rel="stylesheet" href="assets/css/noscript.css" />
 	</noscript>
@@ -326,16 +359,21 @@
 				<h2>Get In Touch</h2>
 				<p>I'm always open to discussing research, ML opportunities, and collaborative projects.</p>
 				<div class="contact-buttons">
-					<a href="mailto:uarif2093@gmail.com" class="contact-btn" id="btn-email">
+					<a href="mailto:uarif2093@gmail.com" class="contact-btn" id="btn-email" title="Send email to uarif2093@gmail.com">
 						<span class="contact-btn-icon">✉</span>
-						<span class="contact-btn-label">Email Me</span>
+						<span class="contact-btn-content">
+							<span class="contact-btn-label">Email</span>
+							<span class="contact-btn-sub">uarif2093@gmail.com</span>
+						</span>
 					</a>
-					<a href="https://www.linkedin.com/in/uzairarif/" target="_blank" class="contact-btn"
-						id="btn-linkedin">
+					<a href="https://www.linkedin.com/in/uzairarif/" target="_blank" rel="noopener noreferrer" class="contact-btn" id="btn-linkedin" title="Uzair Arif LinkedIn Profile">
 						<span class="contact-btn-icon">in</span>
-						<span class="contact-btn-label">LinkedIn</span>
+						<span class="contact-btn-content">
+							<span class="contact-btn-label">LinkedIn</span>
+							<span class="contact-btn-sub">linkedin.com/in/uzairarif</span>
+						</span>
 					</a>
-					<a href="https://github.com/uzairlol" target="_blank" class="contact-btn" id="btn-github">
+					<a href="https://github.com/uzairlol" target="_blank" rel="noopener noreferrer" class="contact-btn" id="btn-github" title="Uzair Arif GitHub Profile">
 						<span class="contact-btn-icon">
 							<svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"
 								xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="display:block;">
@@ -343,7 +381,10 @@
 									d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
 							</svg>
 						</span>
-						<span class="contact-btn-label">GitHub</span>
+						<span class="contact-btn-content">
+							<span class="contact-btn-label">GitHub</span>
+							<span class="contact-btn-sub">github.com/uzairlol</span>
+						</span>
 					</a>
 				</div>
 			</div>

@@ -4,6 +4,28 @@
  */
 
 /* =========================================================
+   GLOBAL TYPOGRAPHY: RIGID SQUARE FONT
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Rajdhani:wght@500;600;700&display=swap');
+
+body, input, select, textarea, button, .button {
+    font-family: 'Rigid Square', 'RigidSquare', 'Chakra Petch', 'Rajdhani', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.02em;
+}
+
+h1, h2, h3, h4, h5, h6, strong, b, .title, nav a, .contact-btn-label {
+    font-family: 'Rigid Square', 'RigidSquare', 'Chakra Petch', 'Rajdhani', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+    font-weight: 700 !important;
+}
+
+p, li, dl, label {
+    font-family: 'Rigid Square', 'RigidSquare', 'Chakra Petch', 'Rajdhani', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+    font-weight: 500 !important;
+}
+
+/* =========================================================
    DARK SOLID RED COLOR SCHEME (NO GRADIENTS, NO NEONS)
    ========================================================= */
 
@@ -49,182 +71,217 @@ h1.major:after {
 }
 
 /* =========================================================
-   PROJECT CARDS
+   REVAMPED PROJECTS SECTION: 2-COLUMN CELL GRID
+   - Clean 2-column CSS grid with balanced spacing
+   - Independent cells with gaps (lines do not touch screen borders or each other)
+   - No boxes, no backgrounds behind names/descriptions
+   - Clean floating project content
+   - Concise GitHub link button
    ========================================================= */
 
-/* Reset the outer .features container to a vertical column */
+#projects .inner {
+    max-width: 1200px !important;
+    width: 90% !important;
+    margin: 0 auto !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
 #projects .features {
-    display: flex !important;
-    flex-direction: column !important;
-    flex-wrap: nowrap !important;
-    gap: 1.4rem;
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 2.2rem !important;
+    margin: 2.5rem auto 0 auto !important;
+    padding: 0 !important;
     border: none !important;
     background: none !important;
     border-radius: 0 !important;
-    margin: 0 !important;
 }
 
-/* Each project card */
+/* Floating grid cell */
 #projects .features > section {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
     width: 100% !important;
-    padding: 1.7rem 2rem !important;
+    padding: 1.8rem 1.9rem !important;
     margin: 0 !important;
 
-    background: rgba(255, 255, 255, 0.035) !important;
-    border: 1px solid rgba(255, 255, 255, 0.08) !important;
-    border-left: 3px solid #8b1e1e !important;
-    border-top: none !important;
-    border-radius: 10px !important;
+    /* Completely borderless & boxless content container */
+    background: transparent !important;
+    border: 1px solid rgba(255, 255, 255, 0.07) !important;
+    border-radius: 8px !important;
+    box-shadow: none !important;
 
-    transition: transform 0.2s ease,
-                box-shadow 0.2s ease,
-                background 0.2s ease,
-                border-left-color 0.2s ease;
+    transition: border-color 0.25s ease, transform 0.25s ease;
     position: relative;
-    overflow: hidden;
+    overflow: visible !important;
 }
 
-/* Disable any radial gradients or glow effects */
-#projects .features > section::before {
+/* Ensure no pseudo element glow / radial gradients */
+#projects .features > section::before,
+#projects .features > section::after {
     display: none !important;
 }
 
-/* Hover lift */
+/* Hover effect */
 #projects .features > section:hover {
-    transform: translateY(-3px) !important;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6) !important;
-    background: rgba(255, 255, 255, 0.06) !important;
-    border-left-color: #a82828 !important;
+    transform: translateY(-2px) !important;
+    border-color: #8b1e1e !important;
+    background: rgba(255, 255, 255, 0.015) !important;
+    box-shadow: none !important;
 }
 
 /* Project title */
 #projects .features > section > h3 {
-    font-size: 1.08em;
-    color: #fff;
-    margin-bottom: 0.25rem;
-    letter-spacing: 0.01em;
+    font-size: 1.25em !important;
+    line-height: 1.35 !important;
+    color: #ffffff !important;
+    margin: 0 0 0.5rem 0 !important;
+    letter-spacing: 0.02em;
 }
 
-/* Tag chips row */
+/* Project tags */
 #projects .features > section small {
-    display: block;
-    font-size: 0.72em;
-    letter-spacing: 0.04em;
-    color: rgba(255, 255, 255, 0.55);
-    margin-bottom: 0.6rem;
+    display: block !important;
+    font-size: 0.78em !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.04em !important;
+    color: #8b1e1e !important;
+    margin-bottom: 0.85rem !important;
+    text-transform: uppercase;
 }
 
-/* Description text */
+/* Description paragraph */
 #projects .features > section > p {
-    color: rgba(255, 255, 255, 0.68);
-    line-height: 1.7;
-    font-size: 0.92em;
-    margin-bottom: 1rem;
+    color: rgba(255, 255, 255, 0.75) !important;
+    font-size: 0.95em !important;
+    line-height: 1.7 !important;
+    margin: 0 0 1.4rem 0 !important;
+    flex-grow: 1 !important;
 }
 
-/* Button row */
+/* Actions & Button */
 #projects .features > section .actions {
-    margin-bottom: 0;
+    margin: auto 0 0 0 !important;
+    padding: 0 !important;
+    display: flex !important;
+    align-items: center !important;
 }
 
-@media screen and (max-width: 736px) {
+#projects .features > section .actions li {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* Concise GitHub Button */
+#projects .features > section .actions .button {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    height: 2.2rem !important;
+    line-height: 2.2rem !important;
+    padding: 0 1.2rem !important;
+    font-size: 0.75rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.08em !important;
+    text-transform: uppercase !important;
+    border-radius: 4px !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    background: transparent !important;
+    color: #e5e5e5 !important;
+    box-shadow: none !important;
+    transition: all 0.2s ease !important;
+}
+
+#projects .features > section .actions .button:hover {
+    border-color: #8b1e1e !important;
+    background: #8b1e1e !important;
+    color: #ffffff !important;
+}
+
+/* Responsive grid: 1 column on tablet and mobile */
+@media screen and (max-width: 980px) {
+    #projects .features {
+        grid-template-columns: 1fr !important;
+        gap: 1.6rem !important;
+    }
+
     #projects .features > section {
-        padding: 1.3rem 1.4rem !important;
+        padding: 1.4rem 1.4rem !important;
     }
 }
 
 /* =========================================================
-   CONTACT BUTTONS
+   REVAMPED GET IN TOUCH SECTION: CLEAN TILES (NO BOX ENCLOSURES)
+   - Eliminates the card enclosure borders/backgrounds
+   - Clean, refined floating action tiles
    ========================================================= */
 
 .contact-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.2rem;
-    margin-top: 1.8rem;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 1.5rem !important;
+    margin-top: 2rem !important;
 }
 
 .contact-btn {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 0.8rem;
-    flex: 1 1 150px;
-    min-width: 140px;
-    padding: 1rem 1.4rem;
-    border-radius: 10px;
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: inline-flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 0.9rem !important;
+    padding: 0.75rem 1.4rem !important;
+    border-radius: 6px !important;
+    background: transparent !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
     text-decoration: none !important;
-    border-bottom: none !important;
-    color: inherit;
-    transition: transform 0.2s ease,
-                box-shadow 0.2s ease,
-                background 0.2s ease,
-                border-color 0.2s ease;
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
+    color: #ffffff !important;
+    box-shadow: none !important;
+    transition: border-color 0.2s ease, transform 0.2s ease, background 0.2s ease !important;
+    cursor: pointer !important;
 }
 
 .contact-btn:hover {
-    transform: translateY(-2px);
-    background: rgba(255, 255, 255, 0.08);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
-    color: #fff;
+    transform: translateY(-2px) !important;
+    border-color: #8b1e1e !important;
+    background: rgba(139, 30, 30, 0.1) !important;
+    box-shadow: none !important;
+    color: #ffffff !important;
 }
 
 .contact-btn-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 2.2rem;
-    height: 2.2rem;
-    border-radius: 6px;
-    font-size: 1rem;
-    font-weight: bold;
-    font-style: normal;
-    line-height: 1;
-    background: rgba(255, 255, 255, 0.08);
-    color: #e5e5e5;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    transition: transform 0.2s ease;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 1.8rem !important;
+    height: 1.8rem !important;
+    background: transparent !important;
+    border: none !important;
+    color: #8b1e1e !important;
+    font-size: 1.1rem !important;
+    transition: color 0.2s ease !important;
 }
 
 .contact-btn:hover .contact-btn-icon {
-    transform: scale(1.05);
-}
-
-/* Solid accent borders on hover */
-#btn-email:hover,
-#btn-linkedin:hover,
-#btn-github:hover {
-    border-color: #8b1e1e;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
-}
-
-#btn-email:hover .contact-btn-icon,
-#btn-linkedin:hover .contact-btn-icon,
-#btn-github:hover .contact-btn-icon {
-    background: #8b1e1e;
-    color: #ffffff;
-    border-color: #a82828;
+    color: #ff4d4d !important;
 }
 
 .contact-btn-label {
-    font-size: 0.9em;
-    font-weight: bold;
-    color: #fff;
-    letter-spacing: 0.02em;
+    font-size: 0.95em !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.04em !important;
+    color: #ffffff !important;
 }
 
 @media screen and (max-width: 600px) {
     .contact-buttons {
-        flex-direction: column;
+        flex-direction: column !important;
+        gap: 1rem !important;
     }
     .contact-btn {
-        flex: 1 1 auto;
+        width: 100% !important;
     }
 }
 
@@ -297,8 +354,8 @@ h1.major:after {
 
 .timeline-date {
     font-size: 0.78em;
-    color: #a82828;
-    font-weight: bold;
+    color: #8b1e1e;
+    font-weight: 700;
     letter-spacing: 0.05em;
     text-transform: uppercase;
     margin-bottom: 0.35rem;

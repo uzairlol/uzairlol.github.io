@@ -4,40 +4,52 @@
  */
 
 /* =========================================================
-   DARKER SHADE COLOR OVERRIDES
+   DARK SOLID RED COLOR SCHEME (NO GRADIENTS, NO NEONS)
    ========================================================= */
 
-/* Darken the base body and wrapper layouts */
+/* Base body, wrappers, and layout */
 body, 
 .wrapper.style1, 
 .wrapper.style1-alt,
-.wrapper.alt {
-    background-color: #0b0202 !important; /* Darker near-black red instead of #3C1414 / #400000 */
-}
-
+.wrapper.alt,
 .wrapper.style2,
-.wrapper.style2-alt {
-    background-color: #0d0d0d !important; /* Darker neutral gray instead of #1C1C1C */
-}
-
+.wrapper.style2-alt,
 .wrapper.style3,
 .wrapper.style3-alt {
-    background-color: #090e18 !important; /* Darker dark slate/navy instead of #152238 */
+    background-color: #0b0202 !important;
+    background-image: none !important;
 }
 
 #sidebar {
-    background: #050505 !important; /* Darker sidebar instead of #0A0A0A */
+    background: #050101 !important;
+    background-image: none !important;
+}
+
+/* Accent lines and headings: solid muted dark crimson red */
+h1.major:after {
+    background-image: none !important;
+    background-color: #8b1e1e !important;
+}
+
+/* Sidebar navigation indicators */
+#sidebar nav a:before {
+    background: rgba(255, 255, 255, 0.08) !important;
+}
+
+#sidebar nav a:after {
+    background-image: none !important;
+    background-color: #8b1e1e !important;
+}
+
+@media screen and (max-width: 1280px) {
+    #sidebar nav a:after {
+        background-image: none !important;
+        background-color: #8b1e1e !important;
+    }
 }
 
 /* =========================================================
    PROJECT CARDS
-   Target: #projects .features > section
-   Each <section> inside .features becomes a standalone card.
-   No per-card hardcoding — all styling is selector-driven.
-   The theme (main.css) uses:
-     .features        → flex + flex-wrap: wrap
-     .features section → width: 50%, border-top, padding w/ icon offset
-   We override all of that here.
    ========================================================= */
 
 /* Reset the outer .features container to a vertical column */
@@ -46,7 +58,6 @@ body,
     flex-direction: column !important;
     flex-wrap: nowrap !important;
     gap: 1.4rem;
-    /* strip the theme's outer box-styling */
     border: none !important;
     background: none !important;
     border-radius: 0 !important;
@@ -55,58 +66,38 @@ body,
 
 /* Each project card */
 #projects .features > section {
-    /* layout */
     width: 100% !important;
     padding: 1.7rem 2rem !important;
     margin: 0 !important;
 
-    /* card chrome */
-    background: rgba(255, 255, 255, 0.045) !important;
-    border: 1px solid rgba(255, 255, 255, 0.09) !important;
-    border-left: 3px solid rgba(180, 130, 255, 0.6) !important;
-    border-top: none !important;          /* kill theme's top dividers */
-    border-radius: 12px !important;
+    background: rgba(255, 255, 255, 0.035) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-left: 3px solid #8b1e1e !important;
+    border-top: none !important;
+    border-radius: 10px !important;
 
-    /* animation */
-    transition: transform 0.22s ease,
-                box-shadow 0.22s ease,
-                background 0.22s ease,
-                border-left-color 0.22s ease;
+    transition: transform 0.2s ease,
+                box-shadow 0.2s ease,
+                background 0.2s ease,
+                border-left-color 0.2s ease;
     position: relative;
     overflow: hidden;
 }
 
-/* Ambient glow effect is handled by hover below */
-
-/* Decorative ambient glow top-left — no extra markup */
+/* Disable any radial gradients or glow effects */
 #projects .features > section::before {
-    content: '';
-    position: absolute;
-    top: -40px;
-    left: -40px;
-    width: 140px;
-    height: 140px;
-    background: radial-gradient(circle, rgba(180, 130, 255, 0.1) 0%, transparent 70%);
-    pointer-events: none;
-    border-radius: 50%;
-    opacity: 0;
-    transition: opacity 0.3s ease;
+    display: none !important;
 }
 
 /* Hover lift */
 #projects .features > section:hover {
-    transform: translateY(-4px) !important;
-    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.45),
-                0 0 0 1px rgba(180, 130, 255, 0.22);
-    background: rgba(255, 255, 255, 0.075) !important;
-    border-left-color: rgba(200, 160, 255, 1) !important;
+    transform: translateY(-3px) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6) !important;
+    background: rgba(255, 255, 255, 0.06) !important;
+    border-left-color: #a82828 !important;
 }
 
-#projects .features > section:hover::before {
-    opacity: 1;
-}
-
-/* Project title — slightly larger + brighter */
+/* Project title */
 #projects .features > section > h3 {
     font-size: 1.08em;
     color: #fff;
@@ -114,31 +105,28 @@ body,
     letter-spacing: 0.01em;
 }
 
-/* Tag chips row (the <small> element) */
+/* Tag chips row */
 #projects .features > section small {
     display: block;
-    font-size: 0.71em;
-    letter-spacing: 0.05em;
-    color: rgba(200, 165, 255, 0.8);
+    font-size: 0.72em;
+    letter-spacing: 0.04em;
+    color: rgba(255, 255, 255, 0.55);
     margin-bottom: 0.6rem;
 }
 
 /* Description text */
 #projects .features > section > p {
-    color: rgba(255, 255, 255, 0.65);
-    line-height: 1.72;
+    color: rgba(255, 255, 255, 0.68);
+    line-height: 1.7;
     font-size: 0.92em;
     margin-bottom: 1rem;
 }
 
-/* Button row — no bottom breathing room needed */
+/* Button row */
 #projects .features > section .actions {
     margin-bottom: 0;
 }
 
-/* =========================================================
-   RESPONSIVE: tighter padding on mobile
-   ========================================================= */
 @media screen and (max-width: 736px) {
     #projects .features > section {
         padding: 1.3rem 1.4rem !important;
@@ -147,8 +135,6 @@ body,
 
 /* =========================================================
    CONTACT BUTTONS
-   Three large clickable cards for Email, LinkedIn, GitHub.
-   Fully selector-driven — layout and colour are CSS-only.
    ========================================================= */
 
 .contact-buttons {
@@ -158,7 +144,6 @@ body,
     margin-top: 1.8rem;
 }
 
-/* Base card - updated for horizontal, clean alignment */
 .contact-btn {
     display: flex;
     flex-direction: row;
@@ -169,14 +154,15 @@ body,
     min-width: 140px;
     padding: 1rem 1.4rem;
     border-radius: 10px;
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.04);
     border: 1px solid rgba(255, 255, 255, 0.1);
     text-decoration: none !important;
-    border-bottom: none !important;         /* kill theme's dotted underline */
+    border-bottom: none !important;
     color: inherit;
     transition: transform 0.2s ease,
                 box-shadow 0.2s ease,
-                background 0.2s ease;
+                background 0.2s ease,
+                border-color 0.2s ease;
     position: relative;
     overflow: hidden;
     cursor: pointer;
@@ -184,62 +170,48 @@ body,
 
 .contact-btn:hover {
     transform: translateY(-2px);
-    background: rgba(255, 255, 255, 0.09);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
     color: #fff;
 }
 
-/* Icon container inside button */
 .contact-btn-icon {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 2.2rem;
     height: 2.2rem;
-    border-radius: 50%;
+    border-radius: 6px;
     font-size: 1rem;
     font-weight: bold;
     font-style: normal;
     line-height: 1;
+    background: rgba(255, 255, 255, 0.08);
+    color: #e5e5e5;
+    border: 1px solid rgba(255, 255, 255, 0.12);
     transition: transform 0.2s ease;
 }
 
 .contact-btn:hover .contact-btn-icon {
-    transform: scale(1.08);
+    transform: scale(1.05);
 }
 
-/* Per-button accent colours */
-#btn-email .contact-btn-icon {
-    background: rgba(234, 88, 12, 0.18);
-    color: #f97316;
-    border: 1px solid rgba(249, 115, 22, 0.35);
-}
-#btn-email:hover {
-    border-color: rgba(249, 115, 22, 0.4);
-    box-shadow: 0 6px 20px rgba(249, 115, 22, 0.15);
-}
-
-#btn-linkedin .contact-btn-icon {
-    background: rgba(10, 102, 194, 0.2);
-    color: #60a5fa;
-    border: 1px solid rgba(96, 165, 250, 0.35);
-}
-#btn-linkedin:hover {
-    border-color: rgba(96, 165, 250, 0.4);
-    box-shadow: 0 6px 20px rgba(96, 165, 250, 0.15);
-}
-
-#btn-github .contact-btn-icon {
-    background: rgba(180, 130, 255, 0.15);
-    color: #c084fc;
-    border: 1px solid rgba(192, 132, 252, 0.35);
-}
+/* Solid accent borders on hover */
+#btn-email:hover,
+#btn-linkedin:hover,
 #btn-github:hover {
-    border-color: rgba(192, 132, 252, 0.4);
-    box-shadow: 0 6px 20px rgba(192, 132, 252, 0.15);
+    border-color: #8b1e1e;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
 }
 
-/* Label */
+#btn-email:hover .contact-btn-icon,
+#btn-linkedin:hover .contact-btn-icon,
+#btn-github:hover .contact-btn-icon {
+    background: #8b1e1e;
+    color: #ffffff;
+    border-color: #a82828;
+}
+
 .contact-btn-label {
     font-size: 0.9em;
     font-weight: bold;
@@ -257,13 +229,13 @@ body,
 }
 
 /* =========================================================
-   FOOTER — dark theme, no white bar
+   FOOTER
    ========================================================= */
 #footer {
     text-align: center;
     padding: 2.5em 0;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
-    /* inherits body background (#400000-ish dark) */
+    background-color: #0b0202 !important;
     color: rgba(255, 255, 255, 0.3);
     font-size: 0.8em;
     letter-spacing: 0.04em;
@@ -281,10 +253,9 @@ body,
     position: relative;
     max-width: 900px;
     margin: 2rem 0;
-    padding-left: 2.5rem; /* Space for the vertical line */
+    padding-left: 2.5rem;
 }
 
-/* The vertical line */
 .timeline::before {
     content: '';
     position: absolute;
@@ -304,7 +275,6 @@ body,
     margin-bottom: 0;
 }
 
-/* The timeline dots */
 .timeline-item::before {
     content: '';
     position: absolute;
@@ -313,22 +283,21 @@ body,
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background: #0b0202; /* Match the darkened background */
-    border: 2px solid rgba(180, 130, 255, 0.85); /* Accent border purple */
-    margin-left: 0px; /* centering align offset */
+    background: #0b0202;
+    border: 2px solid #8b1e1e;
+    margin-left: 0px;
     z-index: 1;
     transition: transform 0.2s ease, border-color 0.2s ease;
 }
 
-/* Highlight dot on hover */
 .timeline-item:hover::before {
     transform: scale(1.3);
-    border-color: #f97316; /* Change border color on hover */
+    border-color: #a82828;
 }
 
 .timeline-date {
     font-size: 0.78em;
-    color: rgba(200, 165, 255, 0.85);
+    color: #a82828;
     font-weight: bold;
     letter-spacing: 0.05em;
     text-transform: uppercase;
@@ -383,5 +352,3 @@ body,
         height: 8px;
     }
 }
-
-

@@ -18,7 +18,7 @@
 	<link rel="alternate icon" type="image/png" href="images/favicon.png" />
 	<link rel="apple-touch-icon" href="images/logo.png" />
 	<link rel="stylesheet" href="assets/css/main.css" />
-	<link rel="stylesheet" href="assets/css/custom.css?v=7" />
+	<link rel="stylesheet" href="assets/css/custom.css?v=8" />
 	<noscript>
 		<link rel="stylesheet" href="assets/css/noscript.css" />
 	</noscript>
@@ -178,136 +178,83 @@
 				<h2>Featured Projects</h2>
 				<div class="features">
 					<section>
-						<h3>ELICIT — Emergent LLM Institutions for Climate Treaties</h3>
-						<p><small><strong>Tags:</strong> Multi-Agent Systems, LLM, Game Theory, Climate Risk,
-								Governance, Ollama</small></p>
-						<p>Final-year research project: a multi-agent simulation framework where LLM-driven agents must
-							negotiate cooperation, impose sanctions, share climate risk, and vote to rewrite their own
-							governing rules — modelled on real UN treaty dynamics. Agents choose institutions,
-							contribute to public goods pools, apply punishments/rewards, and participate in
-							constitutional democracy sessions each round. The framework layers in climate shocks, a Loss
-							&amp; Damage Fund, Theory of Mind reasoning, and reputation-driven gossip to study emergent
-							governance under uncertainty.</p>
+						<h3>ELICIT: Emergent LLM Institutions for Climate Treaties</h3>
+						<p><small><strong>Tags:</strong> Multi-Agent Systems, LLM, Game Theory, Climate Risk, Governance, Ollama</small></p>
+						<p>This research project tests whether <strong>LLM agents</strong> can build and follow their own rules to solve climate problems. Independent agents choose whether to contribute resources, reward or punish peers, and vote to update their governing policies across repeated rounds. The simulation includes <strong>climate shocks</strong>, a shared <strong>Loss and Damage Fund</strong>, and peer gossip. It shows how decentralized agent groups learn to cooperate under risk.</p>
 						<ul class="actions">
 							<li><a href="https://github.com/uzairlol/ELICIT-fyp" class="button">View on GitHub</a></li>
 						</ul>
 					</section>
 					<section>
-						<h3>SEAM — Shared Evolving Agent Memory</h3>
+						<h3>SEAM: Shared Evolving Agent Memory</h3>
 						<p><small><strong>Tags:</strong> Multi-Agent Systems, LLM Agents, Agentic Memory, AI Safety, Network Topologies, Ollama</small></p>
-						<p>An empirical study of memory collapse (the Echo Trap &amp; context collapse) and belief contamination in multi-agent LLM systems. Investigates how sharing compressed memory artifacts governs the organic spread of non-transferable lessons across populations. Compares naive overwrite, raw trajectory buffering, and structured incremental updates under varied communication topologies (isolated, broadcast, ring) across deterministic resource-allocation environments.</p>
+						<p>This project studies what happens when <strong>self-evolving agents</strong> share memory with each other. It measures how quickly bad experiences or false lessons spread through a population across different <strong>network topologies</strong>. The benchmark compares <strong>naive overwrite</strong>, raw history logs, and <strong>structured incremental updates</strong> on deterministic resource tasks. Results show that structured curation with ring communication prevents performance collapse while isolating errors.</p>
 						<ul class="actions">
 							<li><a href="https://github.com/uzairlol/seam" class="button">View on GitHub</a></li>
 						</ul>
 					</section>
 					<section>
 						<h3>ECG5000 Anomaly Detection with TCN</h3>
-						<p><small><strong>Tags:</strong> Deep Learning, TCN, PyTorch, Self-Supervised Learning, SimCLR,
-								Anomaly Detection, Time Series</small></p>
-						<p>Production-grade PyTorch pipeline for ECG heartbeat anomaly detection and classification on
-							the ECG5000 dataset. Implements Temporal Convolutional Networks (TCN) across three
-							paradigms: supervised binary classification, self-supervised reconstruction-based anomaly
-							detection (trained on normal ECGs only with calibrated thresholding), and contrastive
-							learning via SimCLR. Features dilated causal convolutions, RobustScaler preprocessing,
-							automatic threshold calibration, and full visualization of confusion matrices and
-							reconstruction quality.</p>
+						<p><small><strong>Tags:</strong> Deep Learning, TCN, PyTorch, Self-Supervised Learning, SimCLR, Anomaly Detection, Time Series</small></p>
+						<p>This project builds a <strong>PyTorch pipeline</strong> to identify irregular heartbeats in ECG time series data. It uses <strong>Temporal Convolutional Networks</strong> across supervised, self-supervised, and contrastive learning setups. The system automatically calibrates detection thresholds to flag abnormal signals with high precision. It also outputs clear visual reports including reconstruction curves and <strong>confusion matrices</strong>.</p>
 						<ul class="actions">
-							<li><a href="https://github.com/uzairlol/ECG5000-TCN-Classification" class="button">View on
-									GitHub</a></li>
+							<li><a href="https://github.com/uzairlol/ECG5000-TCN-Classification" class="button">View on GitHub</a></li>
 						</ul>
 					</section>
 					<section>
 						<h3>Taxi Demand MLOps Pipeline</h3>
-						<p><small><strong>Tags:</strong> MLOps, XGBoost, Optuna, MLflow, FastAPI, SQLite, Docker, Drift
-								Monitoring</small></p>
-						<p>Production-grade MLOps system for real-time NYC taxi demand forecasting. Ingests raw parquet
-							data, engineers lag/rolling features, and trains an Optuna-tuned XGBoost model with full
-							MLflow experiment tracking and Model Registry. Serves predictions via a stateful FastAPI app
-							backed by a persistent SQLite feature store, with KS-test drift monitoring and 36
-							unit/integration tests.</p>
+						<p><small><strong>Tags:</strong> MLOps, XGBoost, Optuna, MLflow, FastAPI, SQLite, Docker, Drift Monitoring</small></p>
+						<p>This is a complete <strong>MLOps system</strong> that predicts taxi demand across New York City in real time. It cleans raw trip records, builds rolling time-window features, and trains an <strong>XGBoost model</strong> tuned with Optuna. Predictions run through a <strong>FastAPI service</strong> connected to a local feature store and containerized with <strong>Docker</strong>. It also tracks data drift continuously using statistical tests and includes 36 automated unit tests.</p>
 						<ul class="actions">
 							<li><a href="https://github.com/uzairlol/taxi-mlops" class="button">View on GitHub</a></li>
 						</ul>
 					</section>
 					<section>
 						<h3>IBA RAG Chatbot</h3>
-						<p><small><strong>Tags:</strong> NLP, RAG, Hybrid Search, FAISS, BM25, LangChain, Groq,
-								Streamlit</small></p>
-						<p>Hybrid Retrieval-Augmented Generation chatbot for IBA university data. Combines FAISS
-							semantic search with BM25 keyword search using Reciprocal Rank Fusion across both PDF
-							documents and HTML web pages. Features smart recursive chunking that respects paragraph
-							boundaries, source attribution on every answer, and a Streamlit web interface. Powered by
-							LangChain and Groq's Llama 3.</p>
+						<p><small><strong>Tags:</strong> NLP, RAG, Hybrid Search, FAISS, BM25, LangChain, Groq, Streamlit</small></p>
+						<p>This is an internal assistant that answers student and faculty questions using university documents and web pages. It pairs <strong>FAISS vector search</strong> with <strong>BM25 keyword search</strong> through reciprocal rank fusion to find exact information. Answers are generated by <strong>Llama 3</strong> via Groq with clear source citations for every claim. Users interact with the system through a responsive <strong>Streamlit interface</strong>.</p>
 						<ul class="actions">
-							<li><a href="https://github.com/uzairlol/IBA-RAG-chatbot" class="button">View on GitHub</a>
-							</li>
+							<li><a href="https://github.com/uzairlol/IBA-RAG-chatbot" class="button">View on GitHub</a></li>
 						</ul>
 					</section>
 					<section>
 						<h3>Prophet Daily Revenue Forecasting</h3>
-						<p><small><strong>Tags:</strong> Time Series, Prophet, Optuna, Lunar Calendar, Revenue
-								Forecasting</small></p>
-						<p>Daily revenue forecasting pipeline using Facebook Prophet with full Pakistan public and
-							Islamic lunar holiday integration. Hyperparameters are tuned end-to-end with Optuna, and
-							results are exported to Excel with trend visualizations — designed for confidential business
-							data with reproducible forecasting workflows.</p>
+						<p><small><strong>Tags:</strong> Time Series, Prophet, Optuna, Lunar Calendar, Revenue Forecasting</small></p>
+						<p>This tool forecasts daily business revenue while accounting for complex seasonal trends. It integrates <strong>Facebook Prophet</strong> with custom calendars for national holidays and <strong>Islamic lunar events</strong>. Model parameters are tuned automatically using <strong>Optuna</strong> to minimize prediction error. Forecast tables and trend charts are exported directly into Excel spreadsheets for operational planning.</p>
 						<ul class="actions">
-							<li><a href="https://github.com/uzairlol/Prophet-Daily-Revenue-Forecasting"
-									class="button">View on GitHub</a></li>
+							<li><a href="https://github.com/uzairlol/Prophet-Daily-Revenue-Forecasting" class="button">View on GitHub</a></li>
 						</ul>
 					</section>
 					<section>
 						<h3>Impostor Hunt: Detecting Hallucinated LLM Outputs</h3>
-						<p><small><strong>Tags:</strong> AI Security, NLP, CatBoost, SciBERT, GPT-2 Perplexity, Kaggle,
-								Optuna</small></p>
-						<p>ESA "Secure Your AI" competition entry to distinguish hallucinated and data-poisoned LLM
-							outputs from faithful ones. Achieved a public score of 0.90663 using a CatBoost classifier
-							on SciBERT sentence embeddings, GPT-2 perplexity, bigram Jaccard similarity, KL divergence,
-							and burstiness features — trained on just 95 samples and evaluated against 1,068 test pairs.
-							Tuned via Optuna with 5-fold CV.</p>
+						<p><small><strong>Tags:</strong> AI Security, NLP, CatBoost, SciBERT, GPT-2 Perplexity, Kaggle, Optuna</small></p>
+						<p>This project detects false and data-poisoned text generated by language models. It extracts text features using <strong>SciBERT sentence embeddings</strong>, GPT-2 perplexity scores, and vocabulary similarity metrics. A <strong>CatBoost classifier</strong> trained on these features achieved a top competition score of 0.9066. The full pipeline was validated using <strong>5-fold cross-validation</strong> with Optuna tuning.</p>
 						<ul class="actions">
-							<li><a href="https://github.com/uzairlol/Real-vs-Fake-Text" class="button">View on
-									GitHub</a></li>
+							<li><a href="https://github.com/uzairlol/Real-vs-Fake-Text" class="button">View on GitHub</a></li>
 						</ul>
 					</section>
 					<section>
 						<h3>Inflation Forecast ML</h3>
-						<p><small><strong>Tags:</strong> Forecasting, Ensemble ML, Random Forest, XGBoost, Recursive
-								Forecasting</small></p>
-						<p>Competition project for IBA's Economic Growth &amp; Forecasting (EGF) Lab predicting Pakistan
-							inflation trends for 2024. Combines Random Forest (RMSE: 0.99) and XGBoost (RMSE: 1.12) via
-							a weighted ensemble, with recursive multi-step forecasting, exhaustive feature engineering,
-							and hyperparameter tuning — achieving top-tier accuracy with publicly available
-							macroeconomic data.</p>
+						<p><small><strong>Tags:</strong> Forecasting, Ensemble ML, Random Forest, XGBoost, Recursive Forecasting</small></p>
+						<p>This machine learning model predicts monthly national inflation rates using public economic indicators. It combines <strong>Random Forest</strong> and <strong>XGBoost</strong> into a weighted ensemble for consistent predictions. The model uses <strong>recursive multi-step forecasting</strong> and automated feature selection to model economic momentum. It delivered top-tier benchmark accuracy in the university forecasting challenge.</p>
 						<ul class="actions">
-							<li><a href="https://github.com/uzairlol/InflationForecastML" class="button">View on
-									GitHub</a></li>
+							<li><a href="https://github.com/uzairlol/InflationForecastML" class="button">View on GitHub</a></li>
 						</ul>
 					</section>
 					<section>
 						<h3>LSTM AAPL Stock Prediction</h3>
 						<p><small><strong>Tags:</strong> Deep Learning, LSTM, Time Series, yfinance, Keras</small></p>
-						<p>LSTM neural network predicting Apple (AAPL) stock prices from iPhone launch to present using
-							Yahoo Finance data. Preprocesses with MinMaxScaler and LSTM-compatible sequence generation,
-							trains with Adam optimizer over 100 epochs on an 80/20 split, and evaluates with MAE, MSE,
-							RMSE, and R² — with full visualization of predicted vs. actual price trends.</p>
+						<p>This project uses recurrent neural networks to study stock price patterns. An <strong>LSTM network</strong> processes historical trading data fetched directly from Yahoo Finance. The pipeline normalizes sequential prices and evaluates performance using <strong>RMSE and R-squared metrics</strong>. It generates visual comparison plots showing predicted price curves against actual market history.</p>
 						<ul class="actions">
-							<li><a href="https://github.com/uzairlol/LSTM_AAPL_Stock_Prediction" class="button">View on
-									GitHub</a></li>
+							<li><a href="https://github.com/uzairlol/LSTM_AAPL_Stock_Prediction" class="button">View on GitHub</a></li>
 						</ul>
 					</section>
 					<section>
 						<h3>Bitcoin Sentiment Prediction</h3>
-						<p><small><strong>Tags:</strong> Sentiment Analysis, XGBoost, Random Forest, Wikipedia,
-								yfinance, Cryptocurrency</small></p>
-						<p>Predicts Bitcoin's next-day price movement by fusing historical OHLCV data (yfinance) with
-							real-time sentiment signals derived from Wikipedia edit activity. XGBoost and Random Forest
-							classifiers are trained on the combined dataset with hyperparameter tuning, targeting
-							whether BTC price rises or falls — addressing the challenge of sentiment-driven volatility
-							in crypto markets.</p>
+						<p><small><strong>Tags:</strong> Sentiment Analysis, XGBoost, Random Forest, Wikipedia, yfinance, Cryptocurrency</small></p>
+						<p>This project predicts next-day Bitcoin price movements by combining price data with public interest indicators. It extracts edit activity and traffic patterns from <strong>Wikipedia articles</strong> as a proxy for market sentiment. The combined dataset trains <strong>XGBoost and Random Forest classifiers</strong> to determine price direction. This approach helps evaluate how retail attention influences short-term cryptocurrency volatility.</p>
 						<ul class="actions">
-							<li><a href="https://github.com/uzairlol/Bitcoin-Sentiment-Prediction" class="button">View
-									on GitHub</a></li>
+							<li><a href="https://github.com/uzairlol/Bitcoin-Sentiment-Prediction" class="button">View on GitHub</a></li>
 						</ul>
 					</section>
 				</div>

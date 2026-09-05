@@ -20,6 +20,11 @@ h1, h2, h3, h4, h5, h6, strong, b, .title, nav a, .contact-btn-label {
     font-weight: 700 !important;
 }
 
+strong, b {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+}
+
 p, li, dl, label {
     font-family: 'Rigid Square', 'RigidSquare', 'Chakra Petch', 'Rajdhani', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
     font-weight: 500 !important;

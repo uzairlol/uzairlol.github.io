@@ -423,6 +423,16 @@ h1.major:after {
     padding-bottom: 0;
 }
 
+.timeline-column-left .timeline-item:not(:first-child),
+.timeline-column-right .timeline-item {
+    padding-top: 1rem;
+}
+
+.timeline-column-left .timeline-item:not(:first-child)::before,
+.timeline-column-right .timeline-item::before {
+    top: calc(1rem + 6px);
+}
+
 .timeline-item::before {
     content: '';
     position: absolute;

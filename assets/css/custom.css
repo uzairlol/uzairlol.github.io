@@ -415,11 +415,12 @@ h1.major:after {
     position: relative;
     width: auto;
     margin: 0;
-    padding: 0;
+    padding: 0 0 1rem;
 }
 
 .timeline-item:last-child {
     margin-bottom: 0;
+    padding-bottom: 0;
 }
 
 .timeline-item::before {

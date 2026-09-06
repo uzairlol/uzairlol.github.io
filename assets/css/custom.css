@@ -414,7 +414,7 @@ h1.major:after {
 .timeline-item {
     position: relative;
     width: auto;
-    margin: 0 0 -1rem;
+    margin: 0;
     padding: 0;
 }
 

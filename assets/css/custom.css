@@ -425,12 +425,12 @@ h1.major:after {
 
 .timeline-column-left .timeline-item:not(:first-child),
 .timeline-column-right .timeline-item {
-    padding-top: 10rem;
+    padding-top: 15rem;
 }
 
 .timeline-column-left .timeline-item:not(:first-child)::before,
 .timeline-column-right .timeline-item::before {
-    top: calc(10rem + 6px);
+    top: calc(15rem + 6px);
 }
 
 .timeline-item::before {

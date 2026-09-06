@@ -377,35 +377,43 @@ h1.major:after {
 
 .timeline {
     position: relative;
-    max-width: 900px;
-    margin: 2rem 0;
-    padding-left: 2.5rem;
+    max-width: 1100px;
+    margin: 2rem auto;
+    padding: 0;
 }
 
 .timeline::before {
     content: '';
     position: absolute;
-    left: 4px;
+    left: 50%;
     top: 5px;
     bottom: 5px;
     width: 2px;
+    margin-left: -1px;
     background: rgba(255, 255, 255, 0.12);
 }
 
 .timeline-item {
     position: relative;
-    margin-bottom: 2.8rem;
+    width: calc(50% - 1.5rem);
+    margin-bottom: -0.75rem;
+    padding: 0;
 }
 
 .timeline-item:last-child {
     margin-bottom: 0;
 }
 
+.timeline-item:nth-child(even) {
+    margin-left: calc(50% + 1.5rem);
+}
+
 .timeline-item::before {
     content: '';
     position: absolute;
-    left: -2.5rem;
     top: 6px;
+    left: auto;
+    right: -1.75rem;
     width: 10px;
     height: 10px;
     border-radius: 50%;
@@ -414,6 +422,11 @@ h1.major:after {
     margin-left: 0px;
     z-index: 1;
     transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.timeline-item:nth-child(even)::before {
+    right: auto;
+    left: -1.75rem;
 }
 
 .timeline-item:hover::before {
@@ -468,12 +481,21 @@ h1.major:after {
 @media screen and (max-width: 736px) {
     .timeline {
         padding-left: 1.8rem;
+        margin: 2rem 0;
     }
     .timeline::before {
         left: 2px;
+        margin-left: 0;
+    }
+    .timeline-item,
+    .timeline-item:nth-child(even) {
+        width: auto;
+        margin-left: 0;
+        margin-bottom: 2.8rem;
     }
     .timeline-item::before {
         left: -1.8rem;
+        right: auto;
         width: 8px;
         height: 8px;
     }

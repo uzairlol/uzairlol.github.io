@@ -3,8 +3,7 @@ Allow: /
 
 Sitemap: https://uzairlol.github.io/sitemap.xml
 
-# Machine-readable site context
-Info: https://uzairlol.github.io/llms.txt
+# Machine-readable site context: https://uzairlol.github.io/llms.txt
 
 User-agent: OAI-SearchBot
 Allow: /

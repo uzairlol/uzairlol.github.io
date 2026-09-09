@@ -1,0 +1,55 @@
+# Uzair Arif
+
+> AI researcher and machine learning engineer based in Islamabad, Pakistan, available for remote roles worldwide.
+
+## About
+
+Uzair Arif builds and researches multi-agent AI systems, agentic memory architectures, forecasting pipelines, retrieval systems, and production MLOps. His work combines machine learning engineering with research into cooperation, governance, memory reliability, and strategic risk in language-model agents.
+
+- Website: https://uzairlol.github.io/
+- GitHub: https://github.com/uzairlol
+- LinkedIn: https://www.linkedin.com/in/uzairarif/
+- Email: uarif2093@gmail.com
+
+## Focus Areas
+
+- Multi-agent LLM systems and institutional governance
+- Agentic memory and information-poisoning resilience
+- Deep learning and time-series forecasting
+- Hybrid retrieval and retrieval-augmented generation
+- Production MLOps with FastAPI, Docker, MLflow, and DVC
+
+## Featured Projects
+
+### ELICIT: Emergent LLM Institutions for Climate Treaties
+
+A multi-agent simulation framework testing whether language-model agents can create and follow institutions for climate cooperation. Agents contribute to shared resources, vote on policy changes, respond to climate shocks, and manage a Loss and Damage Fund.
+
+- Repository: https://github.com/uzairlol/ELICIT-fyp
+
+### SEAM: Shared Evolving Agent Memory
+
+A benchmark for studying how shared memories, false lessons, and information poisoning spread through populations of self-evolving agents. It compares overwrite, raw-history, and structured-curation policies across network topologies.
+
+- Repository: https://github.com/uzairlol/seam
+
+### Taxi Demand MLOps Pipeline
+
+A production-oriented system for real-time New York City taxi-demand forecasting using rolling time-window features, XGBoost, Optuna, FastAPI, Docker, a feature store, drift monitoring, and automated tests.
+
+- Repository: https://github.com/uzairlol/taxi-mlops
+
+### ECG5000 Anomaly Detection with TCN
+
+A PyTorch time-series pipeline for ECG anomaly detection using temporal convolutional networks, supervised learning, self-supervised learning, and contrastive learning.
+
+- Repository: https://github.com/uzairlol/ECG5000-TCN-Classification
+
+## Other Projects
+
+The portfolio also includes an IBA RAG chatbot using FAISS, BM25, reciprocal rank fusion, LangChain, Groq, and Streamlit; revenue and inflation forecasting systems; hallucinated-text detection; LSTM stock prediction; and Bitcoin sentiment prediction.
+
+## Site Map
+
+- Homepage: https://uzairlol.github.io/
+- Sitemap: https://uzairlol.github.io/sitemap.xml

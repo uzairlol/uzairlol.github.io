@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://uzairlol.github.io/sitemap.xml
+
+# Machine-readable site context
+Info: https://uzairlol.github.io/llms.txt

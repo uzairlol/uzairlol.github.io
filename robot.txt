@@ -1,5 +1,0 @@
-User-agent: *
-Allow: /
-
-# Custom Sitemap Location
-Sitemap: https://uzairlol.github.io

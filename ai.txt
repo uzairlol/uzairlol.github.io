@@ -1,0 +1,31 @@
+# Uzair Arif
+
+> AI researcher and machine learning engineer building multi-agent systems, agentic memory architectures, forecasting pipelines, retrieval systems, and production MLOps.
+
+## Identity
+
+- Website: https://uzairlol.github.io/
+- GitHub: https://github.com/uzairlol
+- LinkedIn: https://www.linkedin.com/in/uzairarif/
+- Google Scholar: https://scholar.google.com/citations?user=sshNYq4AAAAJ&hl=en
+- Location: Islamabad, Pakistan
+- Availability: Worldwide remote roles and research collaborations
+
+## Core Competencies
+
+- Multi-agent AI systems and LLM agent governance
+- Agentic memory reliability and information-poisoning resilience
+- Deep learning and time-series forecasting
+- Retrieval-augmented generation and hybrid search
+- Production MLOps with FastAPI, Docker, MLflow, and DVC
+
+## Featured Projects
+
+- ELICIT: Emergent LLM Institutions for Climate Treaties — https://github.com/uzairlol/ELICIT-fyp
+- SEAM: Shared Evolving Agent Memory — https://github.com/uzairlol/seam
+- Taxi Demand MLOps Pipeline — https://github.com/uzairlol/taxi-mlops
+- ECG5000 Anomaly Detection with TCN — https://github.com/uzairlol/ECG5000-TCN-Classification
+
+## Context
+
+This file is a concise machine-readable profile summary. For project descriptions and additional site context, see https://uzairlol.github.io/llms.txt.

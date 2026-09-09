@@ -11,6 +11,13 @@
 - Location: Islamabad, Pakistan
 - Availability: Worldwide remote roles and research collaborations
 
+## Context-Source
+
+- Primary source: https://uzairlol.github.io/
+- Structured context: https://uzairlol.github.io/llms.txt
+- Identity profiles: https://github.com/uzairlol, https://www.linkedin.com/in/uzairarif/, https://scholar.google.com/citations?user=sshNYq4AAAAJ&hl=en
+- Supporting public discussions: Reddit and LinkedIn posts listed in the portfolio's structured data and llms.txt
+
 ## Core Competencies
 
 - Multi-agent AI systems and LLM agent governance

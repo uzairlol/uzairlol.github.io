@@ -27,12 +27,17 @@ Uzair Arif builds and researches multi-agent AI systems, agentic memory architec
 A multi-agent simulation framework testing whether language-model agents can create and follow institutions for climate cooperation. Agents contribute to shared resources, vote on policy changes, respond to climate shocks, and manage a Loss and Damage Fund.
 
 - Repository: https://github.com/uzairlol/ELICIT-fyp
+- Related discussion: https://www.reddit.com/r/aiagents/comments/1vpb5kw/i_ran_a_26agent_llm_simulation_on_climate/
+- Research progress: https://www.linkedin.com/posts/uzairarif_currently-working-on-a-research-project-about-activity-7501581126151569409-7-uC
+- Multi-agent systems update: https://www.linkedin.com/posts/uzairarif_multiagentsystems-llm-computationaleconomics-activity-7477594273048342528-dIgZ
 
 ### SEAM: Shared Evolving Agent Memory
 
 A benchmark for studying how shared memories, false lessons, and information poisoning spread through populations of self-evolving agents. It compares overwrite, raw-history, and structured-curation policies across network topologies.
 
 - Repository: https://github.com/uzairlol/seam
+- Final-year project update: https://www.linkedin.com/posts/uzairarif_working-on-our-final-year-project-on-the-activity-7456276678323920896-RK7c
+- Poster presentation: https://www.linkedin.com/posts/uzairarif_posters-activity-7458442507434119169-egln
 
 ### Taxi Demand MLOps Pipeline
 
@@ -49,6 +54,8 @@ A PyTorch time-series pipeline for ECG anomaly detection using temporal convolut
 ## Other Projects
 
 The portfolio also includes an IBA RAG chatbot using FAISS, BM25, reciprocal rank fusion, LangChain, Groq, and Streamlit; revenue and inflation forecasting systems; hallucinated-text detection; LSTM stock prediction; and Bitcoin sentiment prediction.
+
+- RAG chatbot project update: https://www.linkedin.com/posts/uzairarif_built-a-rag-chatbot-designed-to-centralize-activity-7419017492427325441-mq58
 
 ## Site Map
 

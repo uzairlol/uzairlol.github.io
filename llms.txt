@@ -9,6 +9,7 @@ Uzair Arif builds and researches multi-agent AI systems, agentic memory architec
 - Website: https://uzairlol.github.io/
 - GitHub: https://github.com/uzairlol
 - LinkedIn: https://www.linkedin.com/in/uzairarif/
+- Google Scholar: https://scholar.google.com/citations?user=sshNYq4AAAAJ&hl=en
 - Email: uarif2093@gmail.com
 
 ## Focus Areas

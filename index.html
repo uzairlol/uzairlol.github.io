@@ -840,9 +840,11 @@
 		// ── Boot ──────────────────────────────────────────────────────────
 		if (document.readyState === 'loading') {
 			document.addEventListener('DOMContentLoaded', function () {
+				scheduleResumeRender();
 				initTilt();
 			});
 		} else {
+			scheduleResumeRender();
 			initTilt();
 		}
 	})();

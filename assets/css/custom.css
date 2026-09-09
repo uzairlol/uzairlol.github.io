@@ -647,6 +647,48 @@ a.resume-card:focus {
     height: auto !important;
     border-radius: 4px !important;
     vertical-align: bottom !important;
+    /* Mosaic: no smoothing when browser upscales the low-res canvas */
+    image-rendering: pixelated !important;
+    image-rendering: -moz-crisp-edges !important;
+    image-rendering: crisp-edges !important;
+}
+
+/* =========================================================
+   INTRO SOCIAL BUTTONS — GitHub & LinkedIn icons
+   Matches the dark-crimson icon color from the contact section
+   ========================================================= */
+
+.intro-social-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.45em !important;
+}
+
+.intro-social-icon {
+    display: inline-block !important;
+    width: 15px !important;
+    height: 15px !important;
+    flex-shrink: 0 !important;
+    color: #8b1e1e !important;
+    fill: #8b1e1e !important;
+    vertical-align: middle !important;
+    position: relative !important;
+    top: -1px !important;
+    transition: color 0.2s ease, fill 0.2s ease !important;
+}
+
+.intro-social-icon--text {
+    width: auto !important;
+    height: auto !important;
+    font-size: 0.9em !important;
+    font-weight: 700 !important;
+    line-height: 1 !important;
+    letter-spacing: 0 !important;
+}
+
+.intro-social-btn:hover .intro-social-icon {
+    color: #c23030 !important;
+    fill: #c23030 !important;
 }
 
 /* =========================================================

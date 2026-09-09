@@ -132,7 +132,7 @@
 
 	<!-- Stylesheets -->
 	<link rel="stylesheet" href="assets/css/main.css" />
-	<link rel="stylesheet" href="assets/css/custom.css?v=13" />
+	<link rel="stylesheet" href="assets/css/custom.css?v=14" />
 	<noscript>
 		<link rel="stylesheet" href="assets/css/noscript.css" />
 	</noscript>
@@ -167,10 +167,18 @@
 					<p>Building and researching multi-agent AI systems.</p>
 					<ul class="actions">
 						<li><a href="#about" class="button scrolly">Learn more</a></li>
-						<li><a href="https://raw.githubusercontent.com/uzairlol/uzairlol.github.io/main/assets/uzair_arif_resume.pdf"
-								class="button" target="_blank">Resume</a></li>
-						<li><a href="https://github.com/uzairlol" class="button">GitHub Profile</a></li>
-						<li><a href="https://www.linkedin.com/in/uzairarif/" class="button">LinkedIn</a></li>
+						<li>
+							<a href="https://github.com/uzairlol" class="button intro-social-btn" target="_blank" rel="noopener noreferrer">
+								<svg class="intro-social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+								GitHub Profile
+							</a>
+						</li>
+						<li>
+							<a href="https://www.linkedin.com/in/uzairarif/" class="button intro-social-btn" target="_blank" rel="noopener noreferrer">
+								<span class="intro-social-icon intro-social-icon--text">in</span>
+								LinkedIn
+							</a>
+						</li>
 					</ul>
 				</div>
 				<!-- Right: Animated resume card -->
@@ -457,15 +465,19 @@
 				return pdf.getPage(1);
 			}).then(function (page) {
 				var card = document.getElementById('resume-card');
-				var targetWidth = card ? card.offsetWidth || 340 : 340;
+				var targetWidth = card ? card.offsetWidth || 330 : 330;
 				var rawViewport = page.getViewport({ scale: 1 });
-				var scale = (targetWidth / rawViewport.width) * window.devicePixelRatio;
+
+				// Mosaic effect: render at 65% pixel density, then CSS upscales with pixelated rendering
+				var MOSAIC = 0.65;
+				var scale = (targetWidth / rawViewport.width) * MOSAIC;
 				var viewport = page.getViewport({ scale: scale });
 
 				canvas.width  = viewport.width;
 				canvas.height = viewport.height;
-				canvas.style.width  = (viewport.width  / window.devicePixelRatio) + 'px';
-				canvas.style.height = (viewport.height / window.devicePixelRatio) + 'px';
+				// CSS display size is the full width — browser upscales the low-res canvas → mosaic blocks
+				canvas.style.width  = targetWidth + 'px';
+				canvas.style.height = Math.round(viewport.height / viewport.width * targetWidth) + 'px';
 
 				var ctx = canvas.getContext('2d');
 				return page.render({ canvasContext: ctx, viewport: viewport }).promise;

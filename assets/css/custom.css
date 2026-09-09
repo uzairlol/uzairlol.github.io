@@ -64,6 +64,16 @@ body,
     background-size: 100% 100% !important;
 }
 
+/* Ensure hero section text & elements paint immediately for LCP (exempt from is-preload fade delay) */
+body.is-preload #intro.wrapper.fade-up > .inner,
+#intro.wrapper.fade-up > .inner {
+    opacity: 1 !important;
+    transform: none !important;
+    -webkit-transform: none !important;
+    -moz-transform: none !important;
+    -ms-transform: none !important;
+}
+
 #sidebar {
     background: #050101 !important;
     background-image: none !important;

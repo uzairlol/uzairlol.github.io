@@ -160,16 +160,39 @@
 
 		<!-- Intro -->
 		<section id="intro" class="wrapper style1 fullscreen fade-up">
-			<div class="inner">
-				<h1>Uzair Arif</h1>
-				<p>Building and researching multi-agent AI systems.</p>
-				<ul class="actions">
-					<li><a href="#about" class="button scrolly">Learn more</a></li>
-					<li><a href="https://raw.githubusercontent.com/uzairlol/uzairlol.github.io/main/assets/uzair_arif_resume.pdf"
-							class="button" target="_blank">Resume</a></li>
-					<li><a href="https://github.com/uzairlol" class="button">GitHub Profile</a></li>
-					<li><a href="https://www.linkedin.com/in/uzairarif/" class="button">LinkedIn</a></li>
-				</ul>
+			<div class="inner intro-split">
+				<!-- Left: Text content -->
+				<div class="intro-left">
+					<h1>Uzair Arif</h1>
+					<p>Building and researching multi-agent AI systems.</p>
+					<ul class="actions">
+						<li><a href="#about" class="button scrolly">Learn more</a></li>
+						<li><a href="https://raw.githubusercontent.com/uzairlol/uzairlol.github.io/main/assets/uzair_arif_resume.pdf"
+								class="button" target="_blank">Resume</a></li>
+						<li><a href="https://github.com/uzairlol" class="button">GitHub Profile</a></li>
+						<li><a href="https://www.linkedin.com/in/uzairarif/" class="button">LinkedIn</a></li>
+					</ul>
+				</div>
+				<!-- Right: Animated resume card -->
+				<div class="intro-right">
+					<div class="resume-float-wrap">
+						<a class="resume-card" id="resume-card"
+							href="https://raw.githubusercontent.com/uzairlol/uzairlol.github.io/main/assets/uzair_arif_resume.pdf"
+							target="_blank" rel="noopener noreferrer" title="View Full Resume">
+							<canvas id="resume-canvas"></canvas>
+							<div class="resume-mesh-overlay"></div>
+							<div class="resume-card-shine"></div>
+							<div class="resume-card-label">
+								<span>View Resume</span>
+								<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+							</div>
+							<div class="resume-corner-tl"></div>
+							<div class="resume-corner-tr"></div>
+							<div class="resume-corner-bl"></div>
+							<div class="resume-corner-br"></div>
+						</a>
+					</div>
+				</div>
 			</div>
 		</section>
 
@@ -413,6 +436,123 @@
 	<script src="assets/js/breakpoints.min.js"></script>
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
+
+	<!-- PDF.js: render resume page 1 on the hero card -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+	<script>
+	(function () {
+		'use strict';
+
+		// ── PDF Rendering ─────────────────────────────────────────────────
+		var PDF_URL = 'https://raw.githubusercontent.com/uzairlol/uzairlol.github.io/main/assets/uzair_arif_resume.pdf';
+		var WORKER_URL = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+		function renderResumePDF() {
+			var canvas = document.getElementById('resume-canvas');
+			if (!canvas) return;
+
+			pdfjsLib.GlobalWorkerOptions.workerSrc = WORKER_URL;
+
+			pdfjsLib.getDocument(PDF_URL).promise.then(function (pdf) {
+				return pdf.getPage(1);
+			}).then(function (page) {
+				var card = document.getElementById('resume-card');
+				var targetWidth = card ? card.offsetWidth || 340 : 340;
+				var rawViewport = page.getViewport({ scale: 1 });
+				var scale = (targetWidth / rawViewport.width) * window.devicePixelRatio;
+				var viewport = page.getViewport({ scale: scale });
+
+				canvas.width  = viewport.width;
+				canvas.height = viewport.height;
+				canvas.style.width  = (viewport.width  / window.devicePixelRatio) + 'px';
+				canvas.style.height = (viewport.height / window.devicePixelRatio) + 'px';
+
+				var ctx = canvas.getContext('2d');
+				return page.render({ canvasContext: ctx, viewport: viewport }).promise;
+			}).catch(function (err) {
+				// Fallback placeholder (shown on file:// or network error)
+				var canvas = document.getElementById('resume-canvas');
+				if (!canvas) return;
+				canvas.width  = 680;
+				canvas.height = 960;
+				canvas.style.width  = '340px';
+				canvas.style.height = '480px';
+				var ctx = canvas.getContext('2d');
+				ctx.fillStyle = '#130404';
+				ctx.fillRect(0, 0, 680, 960);
+				ctx.fillStyle = 'rgba(139,30,30,0.18)';
+				for (var r = 20; r < 960; r += 20) {
+					ctx.fillRect(20, r, 640, 1);
+				}
+				ctx.fillStyle = 'rgba(255,255,255,0.55)';
+				ctx.font = 'bold 28px Chakra Petch, sans-serif';
+				ctx.textAlign = 'center';
+				ctx.fillText('Uzair Arif', 340, 400);
+				ctx.font = '500 18px Chakra Petch, sans-serif';
+				ctx.fillStyle = 'rgba(255,255,255,0.35)';
+				ctx.fillText('Resume', 340, 440);
+			});
+		}
+
+		// ── 3-D Tilt on Mouse-Move ─────────────────────────────────────────
+		function initTilt() {
+			var card = document.getElementById('resume-card');
+			if (!card) return;
+
+			var MAX_TILT = 9; // degrees
+			var raf;
+			var targetRX = 0, targetRY = 0;
+			var currentRX = 0, currentRY = 0;
+			var isHovered = false;
+
+			function lerp(a, b, t) { return a + (b - a) * t; }
+
+			function animateTilt() {
+				currentRX = lerp(currentRX, targetRX, 0.1);
+				currentRY = lerp(currentRY, targetRY, 0.1);
+				card.style.transform = 'perspective(900px) rotateX(' + currentRX.toFixed(3) + 'deg) rotateY(' + currentRY.toFixed(3) + 'deg) translateZ(6px)';
+				if (isHovered || Math.abs(currentRX) > 0.05 || Math.abs(currentRY) > 0.05) {
+					raf = requestAnimationFrame(animateTilt);
+				} else {
+					card.style.transform = '';
+					cancelAnimationFrame(raf);
+				}
+			}
+
+			card.addEventListener('mousemove', function (e) {
+				var rect = card.getBoundingClientRect();
+				var x = (e.clientX - rect.left) / rect.width  - 0.5;
+				var y = (e.clientY - rect.top)  / rect.height - 0.5;
+				targetRX = -y * MAX_TILT * 2;
+				targetRY =  x * MAX_TILT * 2;
+			});
+
+			card.addEventListener('mouseenter', function () {
+				isHovered = true;
+				cancelAnimationFrame(raf);
+				raf = requestAnimationFrame(animateTilt);
+			});
+
+			card.addEventListener('mouseleave', function () {
+				isHovered = false;
+				targetRX = 0;
+				targetRY = 0;
+				raf = requestAnimationFrame(animateTilt);
+			});
+		}
+
+		// ── Boot ──────────────────────────────────────────────────────────
+		if (document.readyState === 'loading') {
+			document.addEventListener('DOMContentLoaded', function () {
+				renderResumePDF();
+				initTilt();
+			});
+		} else {
+			renderResumePDF();
+			initTilt();
+		}
+	})();
+	</script>
 
 </body>
 

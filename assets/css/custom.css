@@ -544,3 +544,286 @@ h1.major:after {
         height: 8px;
     }
 }
+
+/* =========================================================
+   HERO / INTRO SPLIT LAYOUT
+   ========================================================= */
+
+/* Override the default #intro .inner centering to a flex row */
+#intro .inner.intro-split {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 5rem !important;
+    max-width: 1300px !important;
+    width: 90% !important;
+    margin: 0 auto !important;
+    padding: 4rem 0 !important;
+}
+
+/* Left column: existing name / tagline / buttons */
+.intro-left {
+    flex: 1 1 0 !important;
+    min-width: 0 !important;
+}
+
+/* Right column: the floating resume card */
+.intro-right {
+    flex: 0 0 auto !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+/* =========================================================
+   FLOATING WRAPPER — handles the up-down animation
+   The card itself handles tilt via JS (no animation conflict)
+   ========================================================= */
+
+.resume-float-wrap {
+    animation: floatCard 5s ease-in-out infinite;
+    will-change: transform;
+}
+
+@keyframes floatCard {
+    0%   { transform: translateY(0px); }
+    50%  { transform: translateY(-16px); }
+    100% { transform: translateY(0px); }
+}
+
+/* =========================================================
+   RESUME CARD — A4 proportions (210:297 ≈ 1:1.4142)
+   ========================================================= */
+
+.resume-card {
+    display: block !important;
+    position: relative !important;
+    width: 330px !important;
+    /* Height driven by canvas; min-height reflects A4 ratio */
+    min-height: 467px !important;
+    border-radius: 4px !important;
+    overflow: hidden !important;
+    cursor: pointer !important;
+    text-decoration: none !important;
+
+    /* Base border — subtle white */
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+
+    /* Layered shadow for depth + glow halo */
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.65),
+        0 0 0 0 rgba(139, 30, 30, 0) !important;
+
+    /* 3D context for tilt */
+    transform-style: preserve-3d !important;
+    transform-origin: center center !important;
+    transition:
+        box-shadow 0.35s ease,
+        border-color 0.35s ease !important;
+
+    background: #0e0101 !important;
+}
+
+.resume-card:hover {
+    border-color: rgba(139, 30, 30, 0.7) !important;
+    box-shadow:
+        0 28px 80px rgba(0, 0, 0, 0.75),
+        0 0 40px rgba(139, 30, 30, 0.35),
+        0 0 80px rgba(139, 30, 30, 0.15) !important;
+}
+
+/* The rendered PDF canvas */
+#resume-canvas {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    border-radius: 3px !important;
+}
+
+/* =========================================================
+   MESH / DOT-GRID OVERLAY
+   Sits above the canvas, pointer-events: none so clicks pass through
+   ========================================================= */
+
+.resume-mesh-overlay {
+    position: absolute !important;
+    inset: 0 !important;
+    pointer-events: none !important;
+    border-radius: 3px !important;
+
+    /* Dot grid using radial-gradient */
+    background-image:
+        radial-gradient(circle, rgba(139, 30, 30, 0.45) 1px, transparent 1px) !important;
+    background-size: 18px 18px !important;
+
+    /* Vignette darkening at edges so center content stays readable */
+    -webkit-mask-image:
+        radial-gradient(ellipse 90% 90% at 50% 50%,
+            transparent 30%,
+            rgba(0,0,0,0.4) 55%,
+            rgba(0,0,0,0.85) 100%) !important;
+    mask-image:
+        radial-gradient(ellipse 90% 90% at 50% 50%,
+            transparent 30%,
+            rgba(0,0,0,0.4) 55%,
+            rgba(0,0,0,0.85) 100%) !important;
+
+    opacity: 0.75 !important;
+    transition: opacity 0.35s ease !important;
+}
+
+.resume-card:hover .resume-mesh-overlay {
+    opacity: 1 !important;
+}
+
+/* =========================================================
+   LIGHT-SWEEP SHINE — appears on hover
+   ========================================================= */
+
+.resume-card-shine {
+    position: absolute !important;
+    inset: 0 !important;
+    pointer-events: none !important;
+    border-radius: 3px !important;
+    background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0) 30%,
+        rgba(255, 255, 255, 0.06) 50%,
+        rgba(255, 255, 255, 0) 70%
+    ) !important;
+    opacity: 0 !important;
+    transition: opacity 0.35s ease !important;
+}
+
+.resume-card:hover .resume-card-shine {
+    opacity: 1 !important;
+}
+
+/* =========================================================
+   CORNER ACCENT BRACKETS — decorative tech feel
+   ========================================================= */
+
+.resume-corner-tl,
+.resume-corner-tr,
+.resume-corner-bl,
+.resume-corner-br {
+    position: absolute !important;
+    width: 16px !important;
+    height: 16px !important;
+    pointer-events: none !important;
+    opacity: 0 !important;
+    transition: opacity 0.3s ease !important;
+    z-index: 10 !important;
+}
+
+.resume-card:hover .resume-corner-tl,
+.resume-card:hover .resume-corner-tr,
+.resume-card:hover .resume-corner-bl,
+.resume-card:hover .resume-corner-br {
+    opacity: 1 !important;
+}
+
+/* Top-left */
+.resume-corner-tl {
+    top: 8px !important;
+    left: 8px !important;
+    border-top: 2px solid #8b1e1e !important;
+    border-left: 2px solid #8b1e1e !important;
+}
+/* Top-right */
+.resume-corner-tr {
+    top: 8px !important;
+    right: 8px !important;
+    border-top: 2px solid #8b1e1e !important;
+    border-right: 2px solid #8b1e1e !important;
+}
+/* Bottom-left */
+.resume-corner-bl {
+    bottom: 8px !important;
+    left: 8px !important;
+    border-bottom: 2px solid #8b1e1e !important;
+    border-left: 2px solid #8b1e1e !important;
+}
+/* Bottom-right */
+.resume-corner-br {
+    bottom: 8px !important;
+    right: 8px !important;
+    border-bottom: 2px solid #8b1e1e !important;
+    border-right: 2px solid #8b1e1e !important;
+}
+
+/* =========================================================
+   RESUME CARD LABEL BADGE — bottom-right "View Resume ↗"
+   ========================================================= */
+
+.resume-card-label {
+    position: absolute !important;
+    bottom: 14px !important;
+    right: 14px !important;
+    z-index: 10 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 5px !important;
+    padding: 5px 10px !important;
+    border-radius: 3px !important;
+    background: rgba(10, 1, 1, 0.82) !important;
+    border: 1px solid rgba(139, 30, 30, 0.5) !important;
+    backdrop-filter: blur(6px) !important;
+    -webkit-backdrop-filter: blur(6px) !important;
+    color: rgba(255, 255, 255, 0.85) !important;
+    font-family: 'Chakra Petch', 'Rajdhani', sans-serif !important;
+    font-size: 0.68rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.07em !important;
+    text-transform: uppercase !important;
+    pointer-events: none !important;
+    opacity: 0 !important;
+    transform: translateY(4px) !important;
+    transition: opacity 0.3s ease, transform 0.3s ease !important;
+}
+
+.resume-card:hover .resume-card-label {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+/* =========================================================
+   RESPONSIVE BREAKPOINTS
+   ========================================================= */
+
+/* Tablet: shrink the card */
+@media screen and (max-width: 1280px) {
+    #intro .inner.intro-split {
+        gap: 3rem !important;
+    }
+    .resume-card {
+        width: 280px !important;
+        min-height: 396px !important;
+    }
+}
+
+/* Narrow tablet / landscape phone: stack vertically */
+@media screen and (max-width: 980px) {
+    #intro .inner.intro-split {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 3rem !important;
+        padding: 3rem 0 !important;
+    }
+    .intro-right {
+        width: 100% !important;
+        justify-content: flex-start !important;
+    }
+    .resume-card {
+        width: 280px !important;
+        min-height: 396px !important;
+    }
+}
+
+/* Mobile: hide the resume card to keep hero clean */
+@media screen and (max-width: 600px) {
+    .intro-right {
+        display: none !important;
+    }
+}

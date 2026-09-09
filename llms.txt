@@ -2,15 +2,15 @@
 
 > AI researcher and machine learning engineer based in Islamabad, Pakistan, available for remote roles worldwide.
 
-## About
-
 Uzair Arif builds and researches multi-agent AI systems, agentic memory architectures, forecasting pipelines, retrieval systems, and production MLOps. His work combines machine learning engineering with research into cooperation, governance, memory reliability, and strategic risk in language-model agents.
 
-- Website: https://uzairlol.github.io/
-- GitHub: https://github.com/uzairlol
-- LinkedIn: https://www.linkedin.com/in/uzairarif/
-- Google Scholar: https://scholar.google.com/citations?user=sshNYq4AAAAJ&hl=en
-- Email: uarif2093@gmail.com
+## Core Links
+
+- [Website](https://uzairlol.github.io/): Official portfolio and personal website
+- [GitHub](https://github.com/uzairlol): Open-source projects and code repositories
+- [LinkedIn](https://www.linkedin.com/in/uzairarif/): Professional background and research updates
+- [Google Scholar](https://scholar.google.com/citations?user=sshNYq4AAAAJ&hl=en): Academic research publications and citations
+- [Resume](https://uzairlol.github.io/assets/uzair_arif_resume.pdf): Full curriculum vitae in PDF format
 
 ## Focus Areas
 
@@ -22,42 +22,19 @@ Uzair Arif builds and researches multi-agent AI systems, agentic memory architec
 
 ## Featured Projects
 
-### ELICIT: Emergent LLM Institutions for Climate Treaties
+- [ELICIT: Emergent LLM Institutions for Climate Treaties](https://github.com/uzairlol/ELICIT-fyp): Multi-agent simulation framework testing whether language-model agents can create and follow institutions for climate cooperation.
+- [SEAM: Shared Evolving Agent Memory](https://github.com/uzairlol/seam): Benchmark for studying how shared memories, false lessons, and information poisoning spread through self-evolving agent populations.
+- [Taxi Demand MLOps Pipeline](https://github.com/uzairlol/taxi-mlops): Production-oriented system for real-time NYC taxi-demand forecasting with FastAPI, Docker, drift monitoring, and CI/CD tests.
+- [ECG5000 Anomaly Detection with TCN](https://github.com/uzairlol/ECG5000-TCN-Classification): PyTorch time-series pipeline for ECG anomaly detection using temporal convolutional networks and contrastive learning.
+- [IBA RAG Chatbot](https://www.linkedin.com/posts/uzairarif_built-a-rag-chatbot-designed-to-centralize-activity-7419017492427325441-mq58): Hybrid retrieval-augmented generation assistant using FAISS, BM25, Reciprocal Rank Fusion, LangChain, and Groq.
+- [LSTM Stock Prediction](https://github.com/uzairlol/LSTM_AAPL_Stock_Prediction): Deep learning recurrent neural network forecasting Apple (AAPL) stock prices.
+- [Bitcoin Sentiment Prediction](https://github.com/uzairlol/Bitcoin-Sentiment-Prediction): Sentiment analysis and price movement modeling for cryptocurrency markets.
 
-A multi-agent simulation framework testing whether language-model agents can create and follow institutions for climate cooperation. Agents contribute to shared resources, vote on policy changes, respond to climate shocks, and manage a Loss and Damage Fund.
+## Site Navigation
 
-- Repository: https://github.com/uzairlol/ELICIT-fyp
-- Related discussion: https://www.reddit.com/r/aiagents/comments/1vpb5kw/i_ran_a_26agent_llm_simulation_on_climate/
-- Research progress: https://www.linkedin.com/posts/uzairarif_currently-working-on-a-research-project-about-activity-7501581126151569409-7-uC
-- Multi-agent systems update: https://www.linkedin.com/posts/uzairarif_multiagentsystems-llm-computationaleconomics-activity-7477594273048342528-dIgZ
-
-### SEAM: Shared Evolving Agent Memory
-
-A benchmark for studying how shared memories, false lessons, and information poisoning spread through populations of self-evolving agents. It compares overwrite, raw-history, and structured-curation policies across network topologies.
-
-- Repository: https://github.com/uzairlol/seam
-- Final-year project update: https://www.linkedin.com/posts/uzairarif_working-on-our-final-year-project-on-the-activity-7456276678323920896-RK7c
-- Poster presentation: https://www.linkedin.com/posts/uzairarif_posters-activity-7458442507434119169-egln
-
-### Taxi Demand MLOps Pipeline
-
-A production-oriented system for real-time New York City taxi-demand forecasting using rolling time-window features, XGBoost, Optuna, FastAPI, Docker, a feature store, drift monitoring, and automated tests.
-
-- Repository: https://github.com/uzairlol/taxi-mlops
-
-### ECG5000 Anomaly Detection with TCN
-
-A PyTorch time-series pipeline for ECG anomaly detection using temporal convolutional networks, supervised learning, self-supervised learning, and contrastive learning.
-
-- Repository: https://github.com/uzairlol/ECG5000-TCN-Classification
-
-## Other Projects
-
-The portfolio also includes an IBA RAG chatbot using FAISS, BM25, reciprocal rank fusion, LangChain, Groq, and Streamlit; revenue and inflation forecasting systems; hallucinated-text detection; LSTM stock prediction; and Bitcoin sentiment prediction.
-
-- RAG chatbot project update: https://www.linkedin.com/posts/uzairarif_built-a-rag-chatbot-designed-to-centralize-activity-7419017492427325441-mq58
-
-## Site Map
-
-- Homepage: https://uzairlol.github.io/
-- Sitemap: https://uzairlol.github.io/sitemap.xml
+- [Home](https://uzairlol.github.io/): Main portfolio landing page
+- [About Me](https://uzairlol.github.io/#about): Research journey, technical stack, and education
+- [Projects](https://uzairlol.github.io/#projects): Full catalog of AI and ML engineering projects
+- [Experience](https://uzairlol.github.io/#experience): Professional and research experience
+- [Contact](https://uzairlol.github.io/#contact): Inquiries and contact channels
+- [Sitemap](https://uzairlol.github.io/sitemap.xml): XML sitemap for search and indexing agents

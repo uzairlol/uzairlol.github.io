@@ -568,12 +568,17 @@ h1.major:after {
     min-width: 0 !important;
 }
 
-/* Social buttons row below "Learn more" — mirrors .contact-buttons layout */
+/* Social buttons row — mirrors .contact-buttons layout */
 .intro-social-btns {
     display: flex !important;
     flex-wrap: wrap !important;
     gap: 1.5rem !important;
     margin-top: 1.5rem !important;
+}
+
+/* Prevent label text wrapping inside intro social buttons */
+.intro-social-btns .contact-btn-label {
+    white-space: nowrap !important;
 }
 
 /* Right column: the floating resume card */

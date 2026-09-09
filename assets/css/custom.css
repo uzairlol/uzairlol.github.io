@@ -69,6 +69,11 @@ body,
     background-image: none !important;
 }
 
+#sidebar nav a,
+.contact-btn {
+    color: #ffffff !important;
+}
+
 /* Accent lines and headings: solid muted dark crimson red */
 h1.major:after {
     background-image: none !important;

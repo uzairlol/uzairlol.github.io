@@ -892,4 +892,12 @@ a.resume-card:focus {
     .intro-right {
         display: none !important;
     }
+    .mobile-resume-btn {
+        display: inline-flex !important;
+    }
+}
+
+/* Desktop: hide the mobile-only resume button */
+.mobile-resume-btn {
+    display: none !important;
 }

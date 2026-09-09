@@ -596,41 +596,48 @@ h1.major:after {
    RESUME CARD — A4 proportions (210:297 ≈ 1:1.4142)
    ========================================================= */
 
-.resume-card {
-    display: block !important;
+/* ── use ID for maximum specificity to beat all inherited borders ── */
+#resume-card,
+a.resume-card,
+a#resume-card {
+    display: inline-block !important;
     position: relative !important;
     width: 330px !important;
-    /* Height driven by canvas; min-height reflects A4 ratio */
-    min-height: 467px !important;
+    height: auto !important;
     border-radius: 4px !important;
     overflow: hidden !important;
     cursor: pointer !important;
     text-decoration: none !important;
 
-    /* Base border — subtle white */
-    border: 1px solid rgba(255, 255, 255, 0.12) !important;
-
-    /* Layered shadow for depth + glow halo */
-    box-shadow:
-        0 20px 60px rgba(0, 0, 0, 0.65),
-        0 0 0 0 rgba(139, 30, 30, 0) !important;
+    /* Kill every border, underline, outline, shadow */
+    border: 0 none transparent !important;
+    border-top: 0 none transparent !important;
+    border-right: 0 none transparent !important;
+    border-bottom: 0 none transparent !important;
+    border-left: 0 none transparent !important;
+    outline: none !important;
+    box-shadow: none !important;
 
     /* 3D context for tilt */
     transform-style: preserve-3d !important;
     transform-origin: center center !important;
-    transition:
-        box-shadow 0.35s ease,
-        border-color 0.35s ease !important;
+    transition: transform 0.2s ease !important;
 
-    background: #0e0101 !important;
+    background: transparent !important;
 }
 
-.resume-card:hover {
-    border-color: rgba(139, 30, 30, 0.7) !important;
-    box-shadow:
-        0 28px 80px rgba(0, 0, 0, 0.75),
-        0 0 40px rgba(139, 30, 30, 0.35),
-        0 0 80px rgba(139, 30, 30, 0.15) !important;
+#resume-card:hover,
+#resume-card:focus,
+#resume-card:active,
+#resume-card:visited,
+a.resume-card:hover,
+a.resume-card:focus {
+    border: 0 none transparent !important;
+    border-bottom: 0 none transparent !important;
+    border-bottom-color: transparent !important;
+    outline: none !important;
+    box-shadow: none !important;
+    text-decoration: none !important;
 }
 
 /* The rendered PDF canvas */
@@ -638,7 +645,8 @@ h1.major:after {
     display: block !important;
     width: 100% !important;
     height: auto !important;
-    border-radius: 3px !important;
+    border-radius: 4px !important;
+    vertical-align: bottom !important;
 }
 
 /* =========================================================
@@ -799,7 +807,7 @@ h1.major:after {
     }
     .resume-card {
         width: 280px !important;
-        min-height: 396px !important;
+        height: auto !important;
     }
 }
 
@@ -817,7 +825,7 @@ h1.major:after {
     }
     .resume-card {
         width: 280px !important;
-        min-height: 396px !important;
+        height: auto !important;
     }
 }
 

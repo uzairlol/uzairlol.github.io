@@ -132,7 +132,7 @@
 
 	<!-- Stylesheets -->
 	<link rel="stylesheet" href="assets/css/main.css" />
-	<link rel="stylesheet" href="assets/css/custom.css?v=13" />
+	<link rel="stylesheet" href="assets/css/custom.css?v=12" />
 	<noscript>
 		<link rel="stylesheet" href="assets/css/noscript.css" />
 	</noscript>
@@ -167,6 +167,8 @@
 					<p>Building and researching multi-agent AI systems.</p>
 					<ul class="actions">
 						<li><a href="#about" class="button scrolly">Learn more</a></li>
+						<li><a href="https://raw.githubusercontent.com/uzairlol/uzairlol.github.io/main/assets/uzair_arif_resume.pdf"
+								class="button" target="_blank">Resume</a></li>
 						<li><a href="https://github.com/uzairlol" class="button">GitHub Profile</a></li>
 						<li><a href="https://www.linkedin.com/in/uzairarif/" class="button">LinkedIn</a></li>
 					</ul>
@@ -184,6 +186,10 @@
 								<span>View Resume</span>
 								<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
 							</div>
+							<div class="resume-corner-tl"></div>
+							<div class="resume-corner-tr"></div>
+							<div class="resume-corner-bl"></div>
+							<div class="resume-corner-br"></div>
 						</a>
 					</div>
 				</div>
@@ -535,106 +541,15 @@
 			});
 		}
 
-		// ── Flowing Low-Poly Clip Path ─────────────────────────────────────
-		// Injects an SVG <clipPath> with an animated polygon. Each of the
-		// PTS interior points per side oscillates at its own speed + phase,
-		// biting inward to create angular, crumpled-paper edges that flow.
-		function initFlowClip() {
-			var card = document.getElementById('resume-card');
-			if (!card) return;
-
-			var NS = 'http://www.w3.org/2000/svg';
-			var svg = document.createElementNS(NS, 'svg');
-			svg.setAttribute('aria-hidden', 'true');
-			svg.style.cssText = 'position:absolute;width:0;height:0;pointer-events:none;overflow:hidden;';
-			var defs  = document.createElementNS(NS, 'defs');
-			var clip  = document.createElementNS(NS, 'clipPath');
-			clip.setAttribute('id', 'resume-flow-clip');
-			clip.setAttribute('clipPathUnits', 'objectBoundingBox');
-			var poly  = document.createElementNS(NS, 'polygon');
-			clip.appendChild(poly);
-			defs.appendChild(clip);
-			svg.appendChild(defs);
-			document.body.appendChild(svg);
-
-			// Apply clip-path — browser prefixes
-			card.style.clipPath        = 'url(#resume-flow-clip)';
-			card.style.webkitClipPath  = 'url(#resume-flow-clip)';
-
-			// ── Geometry settings ──
-			var PTS = 7;      // interior points per side (low-poly: 7 × 4 = 28 moving vertices)
-			var AMP = 0.026;  // max inward bite as fraction of bbox (~8.5 px on a 330px card)
-
-			// Each interior vertex gets a unique oscillation frequency + starting phase
-			var total  = PTS * 4;
-			var phase  = [], freq  = [];
-			for (var i = 0; i < total; i++) {
-				phase.push(Math.random() * Math.PI * 2);
-				// Frequencies range from ~0.2 to ~0.6 rad/tick (slow, organic motion)
-				freq.push(0.18 + Math.random() * 0.38);
-			}
-
-			var t = 0;
-
-			function buildPoints(time) {
-				var P = [], k = 0;
-
-				// inward bite for vertex k at current time (always ≥ 0)
-				function bite(k) {
-					return Math.abs(Math.sin(time * freq[k] + phase[k])) * AMP;
-				}
-
-				// TOP edge  left → right  (perpendicular = +y = inward)
-				P.push('0,0');
-				for (var i = 1; i <= PTS; i++) {
-					var u = i / (PTS + 1);
-					P.push(u.toFixed(4) + ',' + bite(k++).toFixed(4));
-				}
-
-				// RIGHT edge top → bottom  (perpendicular = -x = inward)
-				P.push('1,0');
-				for (var i = 1; i <= PTS; i++) {
-					var u = i / (PTS + 1);
-					P.push((1 - bite(k++)).toFixed(4) + ',' + u.toFixed(4));
-				}
-
-				// BOTTOM edge right → left  (perpendicular = -y = inward)
-				P.push('1,1');
-				for (var i = 1; i <= PTS; i++) {
-					var u = i / (PTS + 1);
-					P.push((1 - u).toFixed(4) + ',' + (1 - bite(k++)).toFixed(4));
-				}
-
-				// LEFT edge  bottom → top  (perpendicular = +x = inward)
-				P.push('0,1');
-				for (var i = 1; i <= PTS; i++) {
-					var u = i / (PTS + 1);
-					P.push(bite(k++).toFixed(4) + ',' + (1 - u).toFixed(4));
-				}
-
-				return P.join(' ');
-			}
-
-			function tick() {
-				t += 0.007;  // slow, meditative flow
-				poly.setAttribute('points', buildPoints(t));
-				requestAnimationFrame(tick);
-			}
-
-			tick();
-		}
-
 		// ── Boot ──────────────────────────────────────────────────────────
 		if (document.readyState === 'loading') {
 			document.addEventListener('DOMContentLoaded', function () {
 				renderResumePDF();
 				initTilt();
-				initFlowClip();
 			});
 		} else {
 			renderResumePDF();
 			initTilt();
-			initFlowClip();
 		}
 	})();
 	</script>

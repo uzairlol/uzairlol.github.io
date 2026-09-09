@@ -600,33 +600,37 @@ h1.major:after {
     display: block !important;
     position: relative !important;
     width: 330px !important;
+    /* Height driven by canvas; min-height reflects A4 ratio */
     min-height: 467px !important;
-    border-radius: 0 !important;       /* clip-path handles the shape */
-    overflow: visible !important;       /* MUST be visible for clip-path to work */
+    border-radius: 4px !important;
+    overflow: hidden !important;
     cursor: pointer !important;
     text-decoration: none !important;
 
-    /* No solid border — the clip-path silhouette IS the edge */
-    border: none !important;
-    background: transparent !important;
-    box-shadow: none !important;
+    /* Base border — subtle white */
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
 
-    /* drop-shadow traces the clip-path polygon (unlike box-shadow which ignores it) */
-    filter:
-        drop-shadow(0 22px 55px rgba(0, 0, 0, 0.75))
-        drop-shadow(0 4px 12px rgba(0, 0, 0, 0.55)) !important;
+    /* Layered shadow for depth + glow halo */
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.65),
+        0 0 0 0 rgba(139, 30, 30, 0) !important;
 
     /* 3D context for tilt */
     transform-style: preserve-3d !important;
     transform-origin: center center !important;
-    transition: filter 0.4s ease !important;
+    transition:
+        box-shadow 0.35s ease,
+        border-color 0.35s ease !important;
+
+    background: #0e0101 !important;
 }
 
 .resume-card:hover {
-    filter:
-        drop-shadow(0 28px 70px rgba(0, 0, 0, 0.85))
-        drop-shadow(0 0 32px rgba(139, 30, 30, 0.5))
-        drop-shadow(0 0 8px  rgba(139, 30, 30, 0.3)) !important;
+    border-color: rgba(139, 30, 30, 0.7) !important;
+    box-shadow:
+        0 28px 80px rgba(0, 0, 0, 0.75),
+        0 0 40px rgba(139, 30, 30, 0.35),
+        0 0 80px rgba(139, 30, 30, 0.15) !important;
 }
 
 /* The rendered PDF canvas */
@@ -696,7 +700,58 @@ h1.major:after {
     opacity: 1 !important;
 }
 
-/* Corner bracket styles removed — shape is now controlled by animated clip-path */
+/* =========================================================
+   CORNER ACCENT BRACKETS — decorative tech feel
+   ========================================================= */
+
+.resume-corner-tl,
+.resume-corner-tr,
+.resume-corner-bl,
+.resume-corner-br {
+    position: absolute !important;
+    width: 16px !important;
+    height: 16px !important;
+    pointer-events: none !important;
+    opacity: 0 !important;
+    transition: opacity 0.3s ease !important;
+    z-index: 10 !important;
+}
+
+.resume-card:hover .resume-corner-tl,
+.resume-card:hover .resume-corner-tr,
+.resume-card:hover .resume-corner-bl,
+.resume-card:hover .resume-corner-br {
+    opacity: 1 !important;
+}
+
+/* Top-left */
+.resume-corner-tl {
+    top: 8px !important;
+    left: 8px !important;
+    border-top: 2px solid #8b1e1e !important;
+    border-left: 2px solid #8b1e1e !important;
+}
+/* Top-right */
+.resume-corner-tr {
+    top: 8px !important;
+    right: 8px !important;
+    border-top: 2px solid #8b1e1e !important;
+    border-right: 2px solid #8b1e1e !important;
+}
+/* Bottom-left */
+.resume-corner-bl {
+    bottom: 8px !important;
+    left: 8px !important;
+    border-bottom: 2px solid #8b1e1e !important;
+    border-left: 2px solid #8b1e1e !important;
+}
+/* Bottom-right */
+.resume-corner-br {
+    bottom: 8px !important;
+    right: 8px !important;
+    border-bottom: 2px solid #8b1e1e !important;
+    border-right: 2px solid #8b1e1e !important;
+}
 
 /* =========================================================
    RESUME CARD LABEL BADGE — bottom-right "View Resume ↗"

@@ -705,51 +705,41 @@
 	<script defer src="assets/js/util.js"></script>
 	<script defer src="assets/js/main.js"></script>
 
-	<!-- PDF.js: render resume page 1 on the hero card -->
+	<!-- Resume: render WebP image with mosaic effect on the hero card -->
 	<script>
 	(function () {
 		'use strict';
 
-		// ── PDF Rendering ─────────────────────────────────────────────────
-		var PDF_URL = 'https://uzairlol.github.io/assets/uzair_arif_resume.pdf';
-		var WORKER_URL = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+		// ── Resume Image Rendering (Mosaic Effect) ───────────────────────────
+		var RESUME_IMG_SRC = 'assets/uzair_arif_resume.webp';
 		var resumeLoadStarted = false;
 
-		function renderResumePDF() {
+		function renderResumeImage() {
 			var canvas = document.getElementById('resume-canvas');
 			if (!canvas) return;
-			if (typeof pdfjsLib === 'undefined') {
-				var pdfScript = document.createElement('script');
-				pdfScript.src = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js';
-				pdfScript.onload = renderResumePDF;
-				document.head.appendChild(pdfScript);
-				return;
-			}
 
-			pdfjsLib.GlobalWorkerOptions.workerSrc = WORKER_URL;
-
-			pdfjsLib.getDocument(PDF_URL).promise.then(function (pdf) {
-				return pdf.getPage(1);
-			}).then(function (page) {
+			var img = new Image();
+			img.onload = function () {
 				var card = document.getElementById('resume-card');
 				var targetWidth = card ? card.offsetWidth || 330 : 330;
-				var rawViewport = page.getViewport({ scale: 1 });
 
 				// Mosaic effect: render at 50% pixel density, then CSS upscales with pixelated rendering
 				var MOSAIC = 0.50;
-				var scale = (targetWidth / rawViewport.width) * MOSAIC;
-				var viewport = page.getViewport({ scale: scale });
+				var canvasWidth = Math.round(targetWidth * MOSAIC);
+				var canvasHeight = Math.round((img.naturalHeight / img.naturalWidth) * canvasWidth);
 
-				canvas.width  = viewport.width;
-				canvas.height = viewport.height;
+				canvas.width  = canvasWidth;
+				canvas.height = canvasHeight;
+
 				// CSS display size is the full width — browser upscales the low-res canvas → mosaic blocks
 				canvas.style.width  = targetWidth + 'px';
-				canvas.style.height = Math.round(viewport.height / viewport.width * targetWidth) + 'px';
+				canvas.style.height = Math.round((img.naturalHeight / img.naturalWidth) * targetWidth) + 'px';
 
 				var ctx = canvas.getContext('2d');
-				return page.render({ canvasContext: ctx, viewport: viewport }).promise;
-			}).catch(function (err) {
-				// Fallback placeholder (shown on file:// or network error)
+				ctx.drawImage(img, 0, 0, canvasWidth, canvasHeight);
+			};
+			img.onerror = function () {
+				// Fallback placeholder
 				var canvas = document.getElementById('resume-canvas');
 				if (!canvas) return;
 				canvas.width  = 680;
@@ -770,7 +760,8 @@
 				ctx.font = '500 18px Chakra Petch, sans-serif';
 				ctx.fillStyle = 'rgba(255,255,255,0.35)';
 				ctx.fillText('Resume', 340, 440);
-			});
+			};
+			img.src = RESUME_IMG_SRC;
 		}
 
 		// ── 3-D Tilt on Mouse-Move ─────────────────────────────────────────
@@ -827,14 +818,14 @@
 			if (resumeLoadStarted) return;
 			resumeLoadStarted = true;
 			if ('requestIdleCallback' in window) {
-				window.requestIdleCallback(renderResumePDF, { timeout: 2000 });
+				window.requestIdleCallback(renderResumeImage, { timeout: 2000 });
 			} else {
-				window.setTimeout(renderResumePDF, 0);
+				window.setTimeout(renderResumeImage, 0);
 			}
 		}
 
 		// ── Boot ──────────────────────────────────────────────────────────
-		// Skip PDF rendering and tilt on mobile (≤600px) — a button is shown instead
+		// Skip image rendering and tilt on mobile (≤600px) — a button is shown instead
 		if (window.matchMedia && window.matchMedia('(max-width: 600px)').matches) return;
 
 		window.addEventListener('load', function () {

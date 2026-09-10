@@ -859,7 +859,7 @@
 					canvas.style.height = targetHeight + 'px';
 
 					// Draw mosaic directly to full-size canvas: downsample to small offscreen canvas, then draw back with smoothing disabled
-					var blockSize = 4; // size of mosaic pixel blocks in pixels
+					var blockSize = 2; // subtle mosaic pixel blocks in pixels (very little mosaic)
 					var sampleW = Math.max(1, Math.round(targetWidth / blockSize));
 					var sampleH = Math.max(1, Math.round(targetHeight / blockSize));
 

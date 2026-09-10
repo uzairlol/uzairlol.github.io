@@ -158,52 +158,312 @@ This repository and its corresponding live web property are architected for opti
 
 ```json
 {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Person",
-      "@id": "https://uzairlol.github.io/#person",
-      "name": "Uzair Arif",
-      "alternateName": "uzairlol",
-      "url": "https://uzairlol.github.io/",
-      "jobTitle": "Machine Learning Engineer & AI Researcher",
-      "email": "mailto:uarif2093@gmail.com",
-      "nationality": "Pakistani",
-      "homeLocation": {
-        "@type": "Place",
-        "name": "Islamabad, Pakistan"
-      },
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Islamabad",
-        "addressRegion": "Islamabad Capital Territory",
-        "addressCountry": "Pakistan"
-      },
-      "workLocation": {
-        "@type": "Place",
-        "name": "Remote (Worldwide)"
-      },
-      "alumniOf": {
-        "@type": "CollegeOrUniversity",
-        "name": "Institute of Business Administration (IBA) Karachi",
-        "url": "https://www.iba.edu.pk/"
-      },
-      "sameAs": [
-        "https://github.com/uzairlol",
-        "https://www.linkedin.com/in/uzairarif/",
-        "https://scholar.google.com/citations?user=sshNYq4AAAAJ&hl=en"
-      ],
-      "knowsAbout": [
-        "Multi-Agent Systems",
-        "Large Language Models",
-        "Agentic Memory Systems",
-        "Deep Learning",
-        "MLOps",
-        "Time Series Forecasting",
-        "Retrieval-Augmented Generation"
-      ]
-    }
-  ]
+	"@context": "https://schema.org",
+	"@graph": [
+		{
+			"@type": "Person",
+			"@id": "https://uzairlol.github.io/#person",
+			"name": "Uzair Arif",
+			"alternateName": "uzairlol",
+			"url": "https://uzairlol.github.io/",
+			"image": "https://uzairlol.github.io/images/logo.png",
+			"email": "mailto:uarif2093@gmail.com",
+			"jobTitle": "Machine Learning Engineer & AI Researcher",
+			"description": "AI Researcher and Machine Learning Engineer based in Islamabad, Pakistan and open to remote roles globally. Specializing in multi-agent LLM systems, emergent governance, agentic memory architectures (ELICIT, SEAM), and production MLOps.",
+			"alumniOf": {
+				"@id": "https://uzairlol.github.io/#iba-karachi"
+			},
+			"nationality": "Pakistani",
+			"homeLocation": {
+				"@type": "Place",
+				"name": "Islamabad, Pakistan"
+			},
+			"address": {
+				"@type": "PostalAddress",
+				"addressLocality": "Islamabad",
+				"addressRegion": "Islamabad Capital Territory",
+				"addressCountry": "Pakistan"
+			},
+			"workLocation": {
+				"@type": "Place",
+				"name": "Remote (Worldwide)"
+			},
+			"sameAs": [
+				"https://github.com/uzairlol",
+				"https://www.linkedin.com/in/uzairarif/",
+				"https://scholar.google.com/citations?user=sshNYq4AAAAJ&hl=en",
+				"mailto:uarif2093@gmail.com"
+			],
+			"mainEntityOfPage": {
+				"@id": "https://uzairlol.github.io/#profile"
+			},
+			"subjectOf": [
+				{
+					"@type": "WebPage",
+					"url": "https://www.reddit.com/r/aiagents/comments/1vpb5kw/i_ran_a_26agent_llm_simulation_on_climate/",
+					"name": "26-agent LLM simulation on climate cooperation",
+					"author": { "@id": "https://uzairlol.github.io/#person" },
+					"publishingPrinciples": "https://uzairlol.github.io/ai.txt"
+				},
+				{
+					"@type": "WebPage",
+					"url": "https://www.linkedin.com/posts/uzairarif_currently-working-on-a-research-project-about-activity-7501581126151569409-7-uC",
+					"name": "Research project progress update",
+					"author": { "@id": "https://uzairlol.github.io/#person" },
+					"publishingPrinciples": "https://uzairlol.github.io/ai.txt"
+				},
+				{
+					"@type": "WebPage",
+					"url": "https://www.linkedin.com/posts/uzairarif_multiagentsystems-llm-computationaleconomics-activity-7477594273048342528-dIgZ",
+					"name": "Multi-agent systems and computational economics update",
+					"author": { "@id": "https://uzairlol.github.io/#person" },
+					"publishingPrinciples": "https://uzairlol.github.io/ai.txt"
+				},
+				{
+					"@type": "WebPage",
+					"url": "https://www.linkedin.com/posts/uzairarif_posters-activity-7458442507434119169-egln",
+					"name": "Research poster presentation update",
+					"author": { "@id": "https://uzairlol.github.io/#person" },
+					"publishingPrinciples": "https://uzairlol.github.io/ai.txt"
+				},
+				{
+					"@type": "WebPage",
+					"url": "https://www.linkedin.com/posts/uzairarif_working-on-our-final-year-project-on-the-activity-7456276678323920896-RK7c",
+					"name": "Final-year project update",
+					"author": { "@id": "https://uzairlol.github.io/#person" },
+					"publishingPrinciples": "https://uzairlol.github.io/ai.txt"
+				},
+				{
+					"@type": "WebPage",
+					"url": "https://www.linkedin.com/posts/uzairarif_built-a-rag-chatbot-designed-to-centralize-activity-7419017492427325441-mq58",
+					"name": "RAG chatbot project update",
+					"author": { "@id": "https://uzairlol.github.io/#person" },
+					"publishingPrinciples": "https://uzairlol.github.io/ai.txt"
+				}
+			],
+			"contactPoint": [
+				{
+					"@type": "ContactPoint",
+					"contactType": "Professional Inquiries & Remote Opportunities",
+					"email": "uarif2093@gmail.com",
+					"url": "https://www.linkedin.com/in/uzairarif/",
+					"availableLanguage": ["English", "Urdu"]
+				}
+			],
+			"knowsAbout": [
+				"Multi-Agent Systems",
+				"Large Language Models",
+				"Agentic Memory Systems",
+				"Game Theory & Mechanism Design",
+				"Deep Learning",
+				"PyTorch",
+				"MLOps",
+				"Time Series Forecasting",
+				"Natural Language Processing",
+				"FastAPI",
+				"Docker",
+				"Vector Retrieval (FAISS, BM25)",
+				"Reinforcement Learning"
+			],
+			"hasOccupation": {
+				"@type": "Occupation",
+				"name": "Machine Learning Engineer & AI Researcher",
+				"skills": "Multi-Agent Simulation, LLM Agent Alignment, Deep Learning, MLOps, Time Series Analysis",
+				"occupationalCategory": "15-1252.00",
+				"qualifications": "Open to Remote Roles Worldwide, Contract, and Full-time Opportunities"
+			}
+		},
+		{
+			"@type": "WebSite",
+			"@id": "https://uzairlol.github.io/#website",
+			"url": "https://uzairlol.github.io/",
+			"name": "Uzair Arif Portfolio",
+			"description": "Portfolio of Uzair Arif - AI Researcher & Machine Learning Engineer in Islamabad, Pakistan (Open to Worldwide Remote Roles)",
+			"publisher": {
+				"@id": "https://uzairlol.github.io/#person"
+			}
+		},
+		{
+			"@type": "ProfilePage",
+			"@id": "https://uzairlol.github.io/#profile",
+			"url": "https://uzairlol.github.io/",
+			"name": "Uzair Arif | Digital Identity and AI Research Portfolio",
+			"description": "Professional profile of Uzair Arif, an AI researcher and machine learning engineer specializing in multi-agent systems, agentic memory, forecasting, and MLOps.",
+			"isPartOf": {
+				"@id": "https://uzairlol.github.io/#website"
+			},
+			"about": {
+				"@id": "https://uzairlol.github.io/#person"
+			},
+			"mainEntity": {
+				"@id": "https://uzairlol.github.io/#person"
+			},
+			"publishingPrinciples": "https://uzairlol.github.io/ai.txt"
+		},
+		{
+			"@type": "CollegeOrUniversity",
+			"@id": "https://uzairlol.github.io/#iba-karachi",
+			"name": "Institute of Business Administration (IBA) Karachi",
+			"url": "https://www.iba.edu.pk/"
+		},
+		{
+			"@type": "SoftwareSourceCode",
+			"@id": "https://github.com/uzairlol/ELICIT-fyp",
+			"name": "ELICIT: Emergent LLM Institutions for Climate Treaties",
+			"description": "A multi-agent simulation framework studying how language-model agents cooperate, govern shared resources, and respond to climate risk.",
+			"codeRepository": "https://github.com/uzairlol/ELICIT-fyp",
+			"creator": { "@id": "https://uzairlol.github.io/#person" },
+			"isPartOf": { "@id": "https://uzairlol.github.io/#profile" }
+		},
+		{
+			"@type": "SoftwareSourceCode",
+			"@id": "https://github.com/uzairlol/seam",
+			"name": "SEAM: Shared Evolving Agent Memory",
+			"description": "A benchmark studying shared memory, information poisoning, and structured memory curation across populations of self-evolving agents.",
+			"codeRepository": "https://github.com/uzairlol/seam",
+			"creator": { "@id": "https://uzairlol.github.io/#person" },
+			"isPartOf": { "@id": "https://uzairlol.github.io/#profile" }
+		},
+		{
+			"@type": "SoftwareSourceCode",
+			"@id": "https://github.com/uzairlol/ECG5000-TCN-Classification",
+			"name": "ECG5000 Anomaly Detection with TCN",
+			"description": "A PyTorch time-series pipeline using temporal convolutional networks for ECG anomaly detection across supervised and self-supervised learning setups.",
+			"codeRepository": "https://github.com/uzairlol/ECG5000-TCN-Classification",
+			"creator": { "@id": "https://uzairlol.github.io/#person" },
+			"isPartOf": { "@id": "https://uzairlol.github.io/#profile" }
+		},
+		{
+			"@type": "SoftwareSourceCode",
+			"@id": "https://github.com/uzairlol/taxi-mlops",
+			"name": "Taxi Demand MLOps Pipeline",
+			"description": "A production-oriented New York City taxi-demand forecasting system using XGBoost, Optuna, FastAPI, Docker, feature storage, and drift monitoring.",
+			"codeRepository": "https://github.com/uzairlol/taxi-mlops",
+			"creator": { "@id": "https://uzairlol.github.io/#person" },
+			"isPartOf": { "@id": "https://uzairlol.github.io/#profile" }
+		},
+		{
+			"@type": "SoftwareSourceCode",
+			"@id": "https://github.com/uzairlol/IBA-RAG-chatbot",
+			"name": "IBA RAG Chatbot",
+			"description": "A retrieval-augmented assistant combining FAISS, BM25, reciprocal rank fusion, LangChain, Groq, and Streamlit.",
+			"codeRepository": "https://github.com/uzairlol/IBA-RAG-chatbot",
+			"creator": { "@id": "https://uzairlol.github.io/#person" },
+			"isPartOf": { "@id": "https://uzairlol.github.io/#profile" }
+		},
+		{
+			"@type": "SoftwareSourceCode",
+			"@id": "https://github.com/uzairlol/Prophet-Daily-Revenue-Forecasting",
+			"name": "Prophet Daily Revenue Forecasting",
+			"description": "A daily revenue forecasting tool using Prophet, custom holiday and lunar calendars, and Optuna parameter tuning.",
+			"codeRepository": "https://github.com/uzairlol/Prophet-Daily-Revenue-Forecasting",
+			"creator": { "@id": "https://uzairlol.github.io/#person" },
+			"isPartOf": { "@id": "https://uzairlol.github.io/#profile" }
+		},
+		{
+			"@type": "SoftwareSourceCode",
+			"@id": "https://github.com/uzairlol/Real-vs-Fake-Text",
+			"name": "Impostor Hunt: Detecting Hallucinated LLM Outputs",
+			"description": "A text-classification pipeline using SciBERT embeddings, GPT-2 perplexity, CatBoost, and cross-validation to detect unreliable generated text.",
+			"codeRepository": "https://github.com/uzairlol/Real-vs-Fake-Text",
+			"creator": { "@id": "https://uzairlol.github.io/#person" },
+			"isPartOf": { "@id": "https://uzairlol.github.io/#profile" }
+		},
+		{
+			"@type": "SoftwareSourceCode",
+			"@id": "https://github.com/uzairlol/InflationForecastML",
+			"name": "Inflation Forecast ML",
+			"description": "A machine-learning model for monthly inflation forecasting using public economic indicators, Random Forest, XGBoost, and recursive forecasting.",
+			"codeRepository": "https://github.com/uzairlol/InflationForecastML",
+			"creator": { "@id": "https://uzairlol.github.io/#person" },
+			"isPartOf": { "@id": "https://uzairlol.github.io/#profile" }
+		},
+		{
+			"@type": "SoftwareSourceCode",
+			"@id": "https://github.com/uzairlol/LSTM_AAPL_Stock_Prediction",
+			"name": "LSTM AAPL Stock Prediction",
+			"description": "An LSTM time-series pipeline that studies historical Apple stock-price patterns and compares predicted and observed values.",
+			"codeRepository": "https://github.com/uzairlol/LSTM_AAPL_Stock_Prediction",
+			"creator": { "@id": "https://uzairlol.github.io/#person" },
+			"isPartOf": { "@id": "https://uzairlol.github.io/#profile" }
+		},
+		{
+			"@type": "SoftwareSourceCode",
+			"@id": "https://github.com/uzairlol/Bitcoin-Sentiment-Prediction",
+			"name": "Bitcoin Sentiment Prediction",
+			"description": "A market-direction prediction project combining Bitcoin data with Wikipedia attention signals and ensemble classifiers.",
+			"codeRepository": "https://github.com/uzairlol/Bitcoin-Sentiment-Prediction",
+			"creator": { "@id": "https://uzairlol.github.io/#person" },
+			"isPartOf": { "@id": "https://uzairlol.github.io/#profile" }
+		},
+		{
+			"@type": "ItemList",
+			"@id": "https://uzairlol.github.io/#projects",
+			"name": "Featured machine learning and AI projects",
+			"itemListElement": [
+				{
+					"@type": "ListItem",
+					"position": 1,
+					"name": "ELICIT: Emergent LLM Institutions for Climate Treaties",
+					"item": { "@id": "https://github.com/uzairlol/ELICIT-fyp", "url": "https://github.com/uzairlol/ELICIT-fyp" }
+				},
+				{
+					"@type": "ListItem",
+					"position": 2,
+					"name": "SEAM: Shared Evolving Agent Memory",
+					"item": { "@id": "https://github.com/uzairlol/seam", "url": "https://github.com/uzairlol/seam" }
+				},
+				{
+					"@type": "ListItem",
+					"position": 3,
+					"name": "Taxi Demand MLOps Pipeline",
+					"item": { "@id": "https://github.com/uzairlol/taxi-mlops", "url": "https://github.com/uzairlol/taxi-mlops" }
+				},
+				{
+					"@type": "ListItem",
+					"position": 4,
+					"name": "ECG5000 Anomaly Detection with TCN",
+					"item": { "@id": "https://github.com/uzairlol/ECG5000-TCN-Classification", "url": "https://github.com/uzairlol/ECG5000-TCN-Classification" }
+				},
+				{
+					"@type": "ListItem",
+					"position": 5,
+					"name": "IBA RAG Chatbot",
+					"item": { "@id": "https://github.com/uzairlol/IBA-RAG-chatbot", "url": "https://github.com/uzairlol/IBA-RAG-chatbot" }
+				},
+				{
+					"@type": "ListItem",
+					"position": 6,
+					"name": "Prophet Daily Revenue Forecasting",
+					"item": { "@id": "https://github.com/uzairlol/Prophet-Daily-Revenue-Forecasting", "url": "https://github.com/uzairlol/Prophet-Daily-Revenue-Forecasting" }
+				},
+				{
+					"@type": "ListItem",
+					"position": 7,
+					"name": "Impostor Hunt: Detecting Hallucinated LLM Outputs",
+					"item": { "@id": "https://github.com/uzairlol/Real-vs-Fake-Text", "url": "https://github.com/uzairlol/Real-vs-Fake-Text" }
+				},
+				{
+					"@type": "ListItem",
+					"position": 8,
+					"name": "Inflation Forecast ML",
+					"item": { "@id": "https://github.com/uzairlol/InflationForecastML", "url": "https://github.com/uzairlol/InflationForecastML" }
+				},
+				{
+					"@type": "ListItem",
+					"position": 9,
+					"name": "LSTM AAPL Stock Prediction",
+					"item": { "@id": "https://github.com/uzairlol/LSTM_AAPL_Stock_Prediction", "url": "https://github.com/uzairlol/LSTM_AAPL_Stock_Prediction" }
+				},
+				{
+					"@type": "ListItem",
+					"position": 10,
+					"name": "Bitcoin Sentiment Prediction",
+					"item": { "@id": "https://github.com/uzairlol/Bitcoin-Sentiment-Prediction", "url": "https://github.com/uzairlol/Bitcoin-Sentiment-Prediction" }
+				}
+			]
+		}
+	]
 }
 ```
 

@@ -853,28 +853,17 @@
 					var targetWidth = card ? card.offsetWidth || 330 : 330;
 					var targetHeight = Math.round((img.naturalHeight / img.naturalWidth) * targetWidth);
 
-					canvas.width = targetWidth;
-					canvas.height = targetHeight;
+					var dpr = window.devicePixelRatio || 1;
+					canvas.width = Math.round(targetWidth * dpr);
+					canvas.height = Math.round(targetHeight * dpr);
 					canvas.style.width = targetWidth + 'px';
 					canvas.style.height = targetHeight + 'px';
 
-					// Draw mosaic directly to full-size canvas: downsample to small offscreen canvas, then draw back with smoothing disabled
-					var blockSize = 2; // subtle mosaic pixel blocks in pixels (very little mosaic)
-					var sampleW = Math.max(1, Math.round(targetWidth / blockSize));
-					var sampleH = Math.max(1, Math.round(targetHeight / blockSize));
-
-					var offscreen = document.createElement('canvas');
-					offscreen.width = sampleW;
-					offscreen.height = sampleH;
-					var offCtx = offscreen.getContext('2d');
-					offCtx.drawImage(img, 0, 0, sampleW, sampleH);
-
 					var ctx = canvas.getContext('2d');
-					ctx.imageSmoothingEnabled = false;
-					ctx.mozImageSmoothingEnabled = false;
-					ctx.webkitImageSmoothingEnabled = false;
-					ctx.msImageSmoothingEnabled = false;
-					ctx.drawImage(offscreen, 0, 0, targetWidth, targetHeight);
+					ctx.scale(dpr, dpr);
+					ctx.imageSmoothingEnabled = true;
+					ctx.imageSmoothingQuality = 'high';
+					ctx.drawImage(img, 0, 0, targetWidth, targetHeight);
 				};
 				img.onerror = function () {
 					// Fallback placeholder
